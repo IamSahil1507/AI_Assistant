@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>OpenClaw Assistant</h1>
+      <p class="muted">Local Awarenet proxy for Excel + Word</p>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>Connection</h2>
+    <label>Endpoint
+      <input id="endpoint" type="text" placeholder="http://127.0.0.1:11435" />
+    </label>
+    <label>Model
+      <input id="model" type="text" placeholder="awarenet:v1" />
+    </label>
+    <label>API key (optional)
+      <input id="apikey" type="password" placeholder="" />
+    </label>
+    <button id="saveSettings">Save settings</button>
+    <div id="status" class="status"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Chat</h2>
+    <div id="chat" class="chat"></div>
+    <div class="row">
+      <textarea id="chatInput" rows="3" placeholder="Ask me anything..."></textarea>
+      <button id="sendChat">Send</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Excel Tools</h2>
+    <div class="row">
+      <button id="applyToSelection">Run on Selection</button>
+      <button id="explainSelection">Explain Selection</button>
+    </div>
+    <label>Prompt for selection
+      <textarea id="selectionPrompt" rows="3" placeholder="Summarize this data..."></textarea>
+    </label>
+    <p class="muted">Outputs results in the next column to the right.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Word Tools</h2>
+    <div class="row">
+      <button id="summarizeSelection">Summarize Selection</button>
+      <button id="rewriteSelection">Rewrite Selection</button>
+    </div>
+  </section>
+
+  <script src="shared.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>

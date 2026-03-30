@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>f3f8f0b6-7f6a-4e0f-9d6b-1aa7ef6e0c51</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>OpenClaw Local</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="OpenClaw Assistant (Excel)"/>
+  <Description DefaultValue="Local assistant for Excel using your Awarenet proxy."/>
+  <IconUrl DefaultValue="http://localhost:3001/assets/icon.png"/>
+  <HighResolutionIconUrl DefaultValue="http://localhost:3001/assets/icon.png"/>
+  <SupportUrl DefaultValue="http://localhost:3001"/>
+  <AppDomains>
+    <AppDomain>http://localhost:3001</AppDomain>
+    <AppDomain>http://localhost:11435</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="http://localhost:3001/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="ExcelApi" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.1">
+        <bt:Set Name="ExcelApi" MinVersion="1.1"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="OpenClaw.Group">
+                <Label resid="OpenClaw.GroupLabel"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16"/>
+                  <bt:Image size="32" resid="Icon.32"/>
+                  <bt:Image size="80" resid="Icon.80"/>
+                </Icon>
+                <Control xsi:type="Button" id="OpenClaw.TaskpaneButton">
+                  <Label resid="OpenClaw.TaskpaneButtonLabel"/>
+                  <Supertip>
+                    <Title resid="OpenClaw.TaskpaneButtonLabel"/>
+                    <Description resid="OpenClaw.TaskpaneButtonDescription"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16"/>
+                    <bt:Image size="32" resid="Icon.32"/>
+                    <bt:Image size="80" resid="Icon.80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>OpenClaw.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16" DefaultValue="http://localhost:3001/assets/icon.png"/>
+        <bt:Image id="Icon.32" DefaultValue="http://localhost:3001/assets/icon.png"/>
+        <bt:Image id="Icon.80" DefaultValue="http://localhost:3001/assets/icon.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Taskpane.Url" DefaultValue="http://localhost:3001/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="OpenClaw.GroupLabel" DefaultValue="OpenClaw"/>
+        <bt:String id="OpenClaw.TaskpaneButtonLabel" DefaultValue="OpenClaw Assistant"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="OpenClaw.TaskpaneButtonDescription" DefaultValue="Open the OpenClaw task pane."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

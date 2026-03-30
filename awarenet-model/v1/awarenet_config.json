@@ -1,0 +1,13 @@
+﻿{
+  "awarenet_version": "v1",
+  "critique_enabled": false,
+  "critique_model": "critical_reasoner",
+  "max_refine_ratio": 1.5,
+  "min_response_chars": 5,
+  "max_response_chars": 12000,
+  "critique_timeout_seconds": 5,
+  "workflow_timeout_seconds": 45,
+  "max_awarenet_depth": 2,
+  "warmup_enabled": true,
+  "executor_max_workers": 4
+}

@@ -1,0 +1,19 @@
+<Page
+    x:Class="Awarenet.ControlCenter.Pages.OverviewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="24">
+        <StackPanel Spacing="12">
+            <TextBlock Text="Awarenet Control Center" FontSize="28" FontWeight="SemiBold" />
+            <TextBlock Text="WinUI 3 (native) — scaffold running. Next: connect to backend, modules, chats, operator." Opacity="0.8" />
+
+            <muxc:InfoBar Title="Status"
+                          Message="Not yet connected to backend. This is the WinUI shell scaffold."
+                          Severity="Informational"
+                          IsOpen="True" />
+        </StackPanel>
+    </Grid>
+</Page>
+

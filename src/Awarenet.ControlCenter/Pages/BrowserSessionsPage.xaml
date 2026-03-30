@@ -1,0 +1,39 @@
+<Page
+    x:Class="Awarenet.ControlCenter.Pages.BrowserSessionsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*">
+        <StackPanel Spacing="4">
+            <TextBlock Text="Browser Sessions" FontSize="22" FontWeight="SemiBold" />
+            <TextBlock Text="View operator browser artifacts and run quick browser actions." Opacity="0.8" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8" Margin="0,12,0,12">
+            <TextBox x:Name="TaskIdBox" Width="260" PlaceholderText="task_id (from Operator)..." />
+            <Button x:Name="LoadButton" Content="Load artifacts" />
+            <TextBox x:Name="UrlBox" Width="420" PlaceholderText="Quick: URL to open + screenshot..." />
+            <Button x:Name="OpenUrlButton" Content="Open URL" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" RowDefinitions="Auto,*" ColumnDefinitions="*,*"
+              ColumnSpacing="12">
+            <muxc:InfoBar x:Name="ErrorBar"
+                          Grid.Row="0"
+                          Grid.ColumnSpan="2"
+                          IsOpen="False"
+                          Severity="Error"
+                          Title="Error"
+                          Message="-" />
+
+            <ListView x:Name="ArtifactsList" Grid.Row="1" Grid.Column="0" SelectionMode="Single" />
+
+            <Image x:Name="PreviewImage"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Stretch="Uniform" />
+        </Grid>
+    </Grid>
+</Page>
+

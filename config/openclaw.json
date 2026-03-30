@@ -1,0 +1,185 @@
+{
+  "ollama_base_url": "http://localhost:11434",
+  "ollama_api": "native",
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "ollama-proxy": {
+        "baseUrl": "http://127.0.0.1:11435",
+        "apiKey": "awarenet-proxy",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "awarenet:v1",
+            "name": "Awarenet v1 (Proxy)",
+            "api": "ollama",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "routing": {
+    "enabled": false,
+    "router_model": "router",
+    "max_reason_chars": 500
+  },
+  "awarenet_overrides": {
+    "critique_enabled": false
+  },
+  "auto_discover_models": true,
+  "ollama_refresh_seconds": 5,
+  "default_model": "",
+  "discovered_model_blocklist": [
+    "*vision*",
+    "*:30b",
+    "*:20b"
+  ],
+  "max_discovered_model_size_gb": 10,
+  "pipeline_enabled": false,
+  "pipeline_steps": [],
+  "pipeline_max_chars": 12000,
+  "manage_model_loads": true,
+  "model_keep_alive": "0s",
+  "require_instructions": true,
+  "auto_run_enabled": true,
+  "assistant_policy": {
+    "autonomy": "full_auto",
+    "autonomy_mode": "auto_unless_risky",
+    "safety_lock": true,
+    "allow_scope": "everything",
+    "emergency_stop": false
+  },
+  "research_enabled": true,
+  "research_mode": "local_first",
+  "max_research_minutes": 5,
+  "max_fix_attempts_per_failure": 2,
+  "assistant_proactive": {
+    "enabled": false,
+    "interval_seconds": 30
+  },
+  "gateway_base_url": "http://localhost:18789",
+  "awarenet_ui_poll_interval_seconds": 5,
+  "model_poll_interval_seconds": 10,
+  "log_retention_days": 30,
+  "log_retention_entries": 2000,
+  "awarenet_ui": {
+    "sidebar_mode": "full",
+    "compact_style": "abbrev",
+    "remember_choice": true,
+    "summary_mode": "cards",
+    "show_raw_json": false
+  },
+  "skills": {
+    "enabled": true,
+    "discovery_only": true,
+    "auto_install": false,
+    "auto_update": false,
+    "schedule_enabled": true,
+    "schedule_interval": "weekly",
+    "allowlist_enabled": false,
+    "allowlist": [],
+    "denylist_enabled": true,
+    "denylist": [],
+    "telemetry_disabled": true
+  },
+  "editor_bridge": {
+    "host": "127.0.0.1",
+    "port": 18999
+  },
+  "desktop": {
+    "enabled": true,
+    "backend": "uia"
+  },
+  "voice": {
+    "enabled": true,
+    "stt_provider": "vosk",
+    "tts_provider": "pyttsx3",
+    "vosk_model_path": "",
+    "listen_seconds": 5,
+    "sample_rate": 16000,
+    "tts_rate": null,
+    "tts_voice_name_contains": ""
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-14T14:33:23.939Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-05T17:21:15.879Z",
+    "lastRunVersion": "2026.3.2",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "update": {
+    "channel": "beta",
+    "auto": {
+      "enabled": true
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "ollama-proxy/awarenet:v1"
+      },
+      "models": {
+        "ollama-proxy/awarenet:v1": {
+          "alias": "awarenet"
+        }
+      },
+      "workspace": "C:\\AI_Assistant",
+      "maxConcurrent": 1
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": {
+          "primary": "ollama-proxy/awarenet:v1",
+          "fallbacks": [
+            "ollama-proxy/awarenet:v1"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "agentToAgent": {
+      "enabled": true
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "config": true,
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8780329921:AAE4BLKVfI_izbflOTGx5j64-h_4RMYCO80",
+      "groupPolicy": "open",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "ollama"
+    }
+  }
+}

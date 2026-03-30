@@ -1,0 +1,2935 @@
+{
+  "installed": [],
+  "history": [
+    {
+      "id": "262d66b4898d4f7f8339bd28ea448a6d",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-15T11:49:30.962814+00:00"
+    },
+    {
+      "id": "6885d428a4204b56823fefa318fcc0ef",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773575370.963837,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-15T11:49:30.970320+00:00"
+    },
+    {
+      "id": "ff9d7340a4604efe838480de51225507",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:13.486513+00:00"
+    },
+    {
+      "id": "d6e06d2eaef54849a53c1d5395ae7e6d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:18.449993+00:00"
+    },
+    {
+      "id": "0551a3f65d42462c90cc8c4c407e0c71",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:23.446724+00:00"
+    },
+    {
+      "id": "1355ab42cab74b24b7b960dc1301ba12",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:28.459086+00:00"
+    },
+    {
+      "id": "5618142b2e6c4883ba783efe8b7df626",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:34.188601+00:00"
+    },
+    {
+      "id": "d059e9f0c2c44fa58b07e58ff6562785",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:39.206882+00:00"
+    },
+    {
+      "id": "9ee90f9a7e034e1489dd512291b41a47",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:44.235804+00:00"
+    },
+    {
+      "id": "6f1c536a34c6438f9c6a20fa654dacfc",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:49.202863+00:00"
+    },
+    {
+      "id": "3b2058b28fdf4642aeaf69704f494f35",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:54.214918+00:00"
+    },
+    {
+      "id": "c6c8e1f1242d48b09facaf0e9bd8a37e",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:13:59.212855+00:00"
+    },
+    {
+      "id": "38fda8a4ad9a434ab29fb6e30ba64caa",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:04.193646+00:00"
+    },
+    {
+      "id": "e8e55942ad7d47ecbcf6c1aede33f919",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:09.223721+00:00"
+    },
+    {
+      "id": "6a3d78a917354d388fcfaa845d19daf6",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:14.206868+00:00"
+    },
+    {
+      "id": "8ef746a529394e44b8ddd59a6c2541b0",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:19.213324+00:00"
+    },
+    {
+      "id": "f4299d1469ae469ab2b7c3a1b1f0dee7",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:24.196101+00:00"
+    },
+    {
+      "id": "a444e483715c43669497cfd87de765d6",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:29.199646+00:00"
+    },
+    {
+      "id": "e0b64023fc3b463ab054c838e78f47f3",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:14:44.238742+00:00"
+    },
+    {
+      "id": "08c12bd500884e33a598e13ab5c04b23",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:15:44.229789+00:00"
+    },
+    {
+      "id": "9eb44a1d4409463aa7762e19047db0d2",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:06.474744+00:00"
+    },
+    {
+      "id": "8f997ed6d4df4f3fa9f474e07eb114e2",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:09.222461+00:00"
+    },
+    {
+      "id": "8786bae44d104a29915ffc9540903be4",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:14.199267+00:00"
+    },
+    {
+      "id": "7029140dd2f44a049560b28fd53d13b5",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:19.201282+00:00"
+    },
+    {
+      "id": "4f07d4de8c514afe87cbf8a82230954f",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:24.198430+00:00"
+    },
+    {
+      "id": "f401656710b946a3a02b7588cabd41bc",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:29.199010+00:00"
+    },
+    {
+      "id": "c7564459f9564038af2bfc6b5275cd50",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:34.196399+00:00"
+    },
+    {
+      "id": "47e10097696c4344ac6b997078395957",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:39.200262+00:00"
+    },
+    {
+      "id": "5e60d319f0e84e43a6da73ddce498396",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:44.220506+00:00"
+    },
+    {
+      "id": "73356a63c907484da2ec7a8a496f954f",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:49.193202+00:00"
+    },
+    {
+      "id": "0590aba5265e4d0fa92d6b97d92793d9",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:54.195906+00:00"
+    },
+    {
+      "id": "71d2bf74e1794d06b8b5c092f0e5f5c3",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:16:59.193434+00:00"
+    },
+    {
+      "id": "d243066f6f1c4216b2391d0a9ccb9803",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:17:04.198731+00:00"
+    },
+    {
+      "id": "7b2646afdcb544598b7938e42bc82a1e",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:17:44.215190+00:00"
+    },
+    {
+      "id": "d3e1b807fd884fc4b6ef4d3debecdf57",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:18:44.225835+00:00"
+    },
+    {
+      "id": "b5a975b4e56543d1893a0e534fa0dcd5",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:19:44.204159+00:00"
+    },
+    {
+      "id": "46a688ccf3194af19fd2a76cf90df52d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:20:44.221230+00:00"
+    },
+    {
+      "id": "d8a977774a314ec2afeec6caf33c40a7",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:21:44.217353+00:00"
+    },
+    {
+      "id": "a58908f98b194f67946b66c767d098e4",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:22:44.235424+00:00"
+    },
+    {
+      "id": "f5bae8b5b1e14522a3f17202b9dcaa2a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:23:44.231181+00:00"
+    },
+    {
+      "id": "a33cbcd18b8e4d50a5f85ca294782b73",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:24:44.223703+00:00"
+    },
+    {
+      "id": "0511ba4cd6d543a58a5a53ccd348deb2",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:25:44.224037+00:00"
+    },
+    {
+      "id": "e70e6a9277434e8cb7e466fec0f24b04",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:26:44.213038+00:00"
+    },
+    {
+      "id": "4a469fdf02c546ebaca5583d0e98b184",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:27:44.225045+00:00"
+    },
+    {
+      "id": "3f82936f55b043e99bfce5f9860897ec",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:28:44.258668+00:00"
+    },
+    {
+      "id": "b366b050a92149c5add08268da665031",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:29:44.251398+00:00"
+    },
+    {
+      "id": "aef3058bbb3943ecbac3ae7bf4ccf35f",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:30:44.279900+00:00"
+    },
+    {
+      "id": "05131947d1004b37af735236eda40777",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:31:44.275568+00:00"
+    },
+    {
+      "id": "9e7ad76a19294055903ff747d32e00b4",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:32:44.244589+00:00"
+    },
+    {
+      "id": "4aaa32d8e2dc44e793ce6be6fbef5dbe",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:33:44.536933+00:00"
+    },
+    {
+      "id": "51d5ef37abfb4d16a9a98aa2797197af",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:34:44.222297+00:00"
+    },
+    {
+      "id": "976947c2f22a425484d40ff92f86b35d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:35:44.233033+00:00"
+    },
+    {
+      "id": "7b8f816be7a24d6ea21dde6ba67508b4",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:36:44.305368+00:00"
+    },
+    {
+      "id": "a384750ed2724160be6091289e62f3e3",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:37:44.256658+00:00"
+    },
+    {
+      "id": "282eaeb1da85424dbd81ace369562ef2",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:38:44.282270+00:00"
+    },
+    {
+      "id": "46d5e0391b2f4cb6a55d73e2d583cffe",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:39:44.233953+00:00"
+    },
+    {
+      "id": "145c3e078eea4e58906af7778d216f36",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:40:44.210377+00:00"
+    },
+    {
+      "id": "5a2135d3477343f29abad4697695a312",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:41:44.223143+00:00"
+    },
+    {
+      "id": "43af9865ec8e44d8a5782097bfed54fe",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:42:44.225650+00:00"
+    },
+    {
+      "id": "17edce458e18492d9448c802e6d45745",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:43:44.220000+00:00"
+    },
+    {
+      "id": "3e9d6d18d2f04e8f9db07fe92e0fc80d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:44:44.235845+00:00"
+    },
+    {
+      "id": "23b41108546545ecaa049f356ca5e966",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:45:44.210923+00:00"
+    },
+    {
+      "id": "89bfda554e55434c995683a445b71ecb",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:46:44.222153+00:00"
+    },
+    {
+      "id": "f26a03e8ee2a4a3fb97b6c1323a6a1dc",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:47:44.226699+00:00"
+    },
+    {
+      "id": "0ec345c893ef400fb44c854af3ec27fa",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:48:44.226781+00:00"
+    },
+    {
+      "id": "b27a7246d02b4b638849fef5ee4b33c2",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:49:44.222518+00:00"
+    },
+    {
+      "id": "de033edb6ead44f29f9abde9b86163c7",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:50:44.215545+00:00"
+    },
+    {
+      "id": "be89b69e990248ea8fe0d86f5703d1ec",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:51:44.224303+00:00"
+    },
+    {
+      "id": "32d1d80036a44b91bcf3860b23a1bf74",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:52:44.259147+00:00"
+    },
+    {
+      "id": "283a525dce9541fdab024c0b1005ca1a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:53:44.267220+00:00"
+    },
+    {
+      "id": "0b56646095a641ce98ede9b291a32596",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:54:44.238965+00:00"
+    },
+    {
+      "id": "ebef26b85dfd4ad38a6786affcfce14f",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:55:44.232009+00:00"
+    },
+    {
+      "id": "91b71402629941d4bb2794ba60b27ca7",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:56:44.238815+00:00"
+    },
+    {
+      "id": "9fa017e5a09a4069ab34cc1dc12cfa9e",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:57:44.253023+00:00"
+    },
+    {
+      "id": "3c9084596c2741c180fb4146d4746afc",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:58:44.263374+00:00"
+    },
+    {
+      "id": "92ec3c38f6d7452a964caf5dcf80910a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T13:59:44.230429+00:00"
+    },
+    {
+      "id": "7838e64530464adcb5a52e6d2a8ad2e8",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:00:44.225402+00:00"
+    },
+    {
+      "id": "1a594b4ce8614d20945e3edac9aaa00c",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:01:44.212035+00:00"
+    },
+    {
+      "id": "ddc350465cea4952ae2c87cc7ff63e71",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:02:44.219817+00:00"
+    },
+    {
+      "id": "30cbba3b65d444eb831764497974d264",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:03:44.532803+00:00"
+    },
+    {
+      "id": "83174effd92742079bf71527f86251ee",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:04:44.240082+00:00"
+    },
+    {
+      "id": "9554f040248d42aa908adbc83ed93797",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:05:44.259383+00:00"
+    },
+    {
+      "id": "c29874c9c3af42a28b7af82380e7df3f",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:06:44.323635+00:00"
+    },
+    {
+      "id": "2cc1e2d1291d45d9be35d4f21a8b3576",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:07:44.281127+00:00"
+    },
+    {
+      "id": "2dce7b76b3c34c3390fc90c2e57cd3cb",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:08:44.294798+00:00"
+    },
+    {
+      "id": "ff714782befb41449c0513573c65b2c6",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:09:44.285334+00:00"
+    },
+    {
+      "id": "6a01ca39c6a64c0caf327340ec0d4895",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:10:44.285680+00:00"
+    },
+    {
+      "id": "5e3ce69c6e7343049343b7d383bb1ba3",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:11:44.263910+00:00"
+    },
+    {
+      "id": "463822a951334b91809da19f4ea69f1f",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:12:44.388682+00:00"
+    },
+    {
+      "id": "48e57d2700a44fda9814882ddc5f863e",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:13:44.295945+00:00"
+    },
+    {
+      "id": "d24da97173af4b28b34f147b5ef44dc6",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:14:44.293632+00:00"
+    },
+    {
+      "id": "0c34b909302d45a183bd13d21f876e9a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:15:44.362774+00:00"
+    },
+    {
+      "id": "8e7a748b893c47ceb8a4ee8271e85981",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:16:44.366670+00:00"
+    },
+    {
+      "id": "583471b1049c4dd08c6399d90de597ac",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:17:44.329719+00:00"
+    },
+    {
+      "id": "f6b1c093241246c1ada6674ccb594fc6",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:18:44.343807+00:00"
+    },
+    {
+      "id": "bad9f75855e74b58a369ac4b6b7a90b8",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:19:44.304009+00:00"
+    },
+    {
+      "id": "b2b249bc2ba4468e84801d36857d67a1",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:20:44.347430+00:00"
+    },
+    {
+      "id": "62a0518c2c964ddb8dbef66daffcfb97",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:21:44.313902+00:00"
+    },
+    {
+      "id": "86b875c33ea04eadb217f5d00a50f63d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:22:44.419143+00:00"
+    },
+    {
+      "id": "19db8fd21a3a4ecf97c21626f25b769a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:23:44.386171+00:00"
+    },
+    {
+      "id": "a36ad3abd30c48ffbdb98b9db5c7c81e",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:24:44.320941+00:00"
+    },
+    {
+      "id": "aaaff69d8d35463db9734fceb84e964b",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:25:44.683320+00:00"
+    },
+    {
+      "id": "3fd67738b33c40848547da4cda2f9893",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:26:44.284049+00:00"
+    },
+    {
+      "id": "4864bba422c342f5bf17d7d5042616bf",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:27:44.273325+00:00"
+    },
+    {
+      "id": "372aa472608d4e16b4dffcde4362cea5",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:28:44.298201+00:00"
+    },
+    {
+      "id": "8306fbe3e6f341119cf938d33977d946",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:29:44.306266+00:00"
+    },
+    {
+      "id": "231a8ea179694dd1b9d72107b269931a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:30:44.341266+00:00"
+    },
+    {
+      "id": "9a15b9d1cee74b6496ab6d62ebe40749",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:31:44.314881+00:00"
+    },
+    {
+      "id": "43b6867aec4a4655a9388f6b82440732",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:32:44.368533+00:00"
+    },
+    {
+      "id": "447663ebffad4b6fb7325c4aa3beefa3",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:33:44.684654+00:00"
+    },
+    {
+      "id": "9ab35db01f5d4b7e9969094259570132",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:34:44.323919+00:00"
+    },
+    {
+      "id": "0a130f6503b04e698fd68ca1b3c1bd0d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:35:44.301807+00:00"
+    },
+    {
+      "id": "dd0be1d5793043e6a87941aa275933e0",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:36:44.276625+00:00"
+    },
+    {
+      "id": "8b27dc79e0094c929d4fdaa5c306b0bf",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:37:44.299764+00:00"
+    },
+    {
+      "id": "895537250bec48f7a9a6256411a18fc9",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:38:44.314889+00:00"
+    },
+    {
+      "id": "4f0455c5978f4ac0b67910e8346a0914",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:39:44.267503+00:00"
+    },
+    {
+      "id": "3e40c9b211744767bc95d9739b5a9f24",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:40:44.347046+00:00"
+    },
+    {
+      "id": "d4b0dee07d294ae0bc2c7cafa2bbe20c",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:41:44.355032+00:00"
+    },
+    {
+      "id": "609b52cb55bb438a9aa10d735e5bcf65",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:42:44.387117+00:00"
+    },
+    {
+      "id": "a87d883729f24adab834a33deaec150c",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:43:44.368533+00:00"
+    },
+    {
+      "id": "e7e17f7adf684213955b1176cb1b485a",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:44:44.269050+00:00"
+    },
+    {
+      "id": "c74d40e73b9147729b6d239326d9368d",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:45:44.315753+00:00"
+    },
+    {
+      "id": "648af589b3fb4752933a21b56e7f2339",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-15T14:46:36.569335+00:00"
+    },
+    {
+      "id": "184ab079f7a748b4aa61f1d9303b4908",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-16T06:21:59.656186+00:00"
+    },
+    {
+      "id": "c0d49a1ad78742e3a09dda8c7f698f86",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773642119.6591866,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-16T06:21:59.668189+00:00"
+    },
+    {
+      "id": "d4bcd96db63a4d3dac4d6a35efc4f46b",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-16T06:26:27.279909+00:00"
+    },
+    {
+      "id": "4ceb8ff633b34aa7a10374319bbd0856",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773642387.2859094,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-16T06:26:27.296915+00:00"
+    },
+    {
+      "id": "0ae5bebe4e50406e87a35ed6f0010e74",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-16T06:44:12.655904+00:00"
+    },
+    {
+      "id": "43a5dcf4ec4949e8af546e4ef153ecd3",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773643452.6589763,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-16T06:44:12.666911+00:00"
+    },
+    {
+      "id": "910881c2f6ba4fd8ade72a82de4e98be",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-16T07:45:48.391331+00:00"
+    },
+    {
+      "id": "c7c90a7edd1641f5be167f05b63f6715",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773647148.3950818,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-16T07:45:48.402088+00:00"
+    },
+    {
+      "id": "227a0f975ec24129a2783cfb0f88672d",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-16T09:31:13.211014+00:00"
+    },
+    {
+      "id": "586f831fec2b4777b6fa6908bc90ce43",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773653473.2139952,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-16T09:31:13.224023+00:00"
+    },
+    {
+      "id": "d9496795685f49b8b10eee66958534fe",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:25:54.148619+00:00"
+    },
+    {
+      "id": "1dc33c4a9cb74abca6b8342f058edd82",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773746754.1516166,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:25:54.163619+00:00"
+    },
+    {
+      "id": "1bdbeaf35a3740d3b6461bd950c8f5ef",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:28:14.793799+00:00"
+    },
+    {
+      "id": "9d1223c627e04a52a6278f96af276eef",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773746894.7967994,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:28:14.807805+00:00"
+    },
+    {
+      "id": "4165835b5a0347d7adac0cdf2b1a4222",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:30:15.627094+00:00"
+    },
+    {
+      "id": "0ae66db02b6f46fa98116404eb8d345d",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773747015.6330938,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:30:15.645541+00:00"
+    },
+    {
+      "id": "fd95d5922c2e4c478cde58f569e18d4d",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:40:25.191416+00:00"
+    },
+    {
+      "id": "604579e48a784727af757adfda0594be",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773747625.194415,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:40:25.204651+00:00"
+    },
+    {
+      "id": "a408b420b09242f5acafb84ffa50a1b8",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:51:52.869369+00:00"
+    },
+    {
+      "id": "e0f908b5842f4cf0a04d95e027327a2f",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773748312.8723683,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:51:52.882368+00:00"
+    },
+    {
+      "id": "e67a49c6b94946dfbbe4effe544e508a",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:52:42.732005+00:00"
+    },
+    {
+      "id": "ab47da37252946569a9632ec00063c42",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773748362.7350085,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:52:42.746671+00:00"
+    },
+    {
+      "id": "7bf52a8d0e644594920d656c8cb79c13",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T11:53:58.062172+00:00"
+    },
+    {
+      "id": "e498e800b5ad475ebde0945956499ff8",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773748438.0651798,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T11:53:58.073770+00:00"
+    },
+    {
+      "id": "ea873e85dba5432fab29a852e92e711e",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T13:44:16.117712+00:00"
+    },
+    {
+      "id": "f0cfba8b2ae34ba89d71e403a87affe9",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773755056.12086,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T13:44:16.129921+00:00"
+    },
+    {
+      "id": "1ba5b96e6ee943c99908f5385f2b62f9",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-17T13:48:24.547055+00:00"
+    },
+    {
+      "id": "ce3ae5d967cb4f95bbffc953fb042a7b",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773755304.5501227,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-17T13:48:24.560103+00:00"
+    },
+    {
+      "id": "be86eb2da1014709bb6f5eeba05ebc59",
+      "kind": "list",
+      "detail": "Listed installed skills",
+      "payload": {
+        "skills": [],
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills list"
+        }
+      },
+      "ts": "2026-03-17T13:48:54.517825+00:00"
+    },
+    {
+      "id": "02e228a9444b4c37ae236ec86c1a85c6",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-18T12:41:40.113425+00:00"
+    },
+    {
+      "id": "e4f3eeddd5a14469af1e716ae3a2b99b",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773837700.119426,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-18T12:41:40.131937+00:00"
+    },
+    {
+      "id": "469be726ee5d44a3b46ca0f8e507ea25",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-18T13:58:33.955910+00:00"
+    },
+    {
+      "id": "d791580f260a42ec99a5143081543f25",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773842313.9599092,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-18T13:58:33.966917+00:00"
+    },
+    {
+      "id": "ee0d97ab29b749ec9eb4fadf31d9df9f",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-18T15:29:54.691072+00:00"
+    },
+    {
+      "id": "5fbf41251f824e73a220db89728ba1ad",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773847794.6950672,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-18T15:29:54.711595+00:00"
+    },
+    {
+      "id": "b983d02680d244bb8008260e178f763c",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-19T06:54:30.457762+00:00"
+    },
+    {
+      "id": "e101595e50a0489a9ab247261a3c0361",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773903270.4607577,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-19T06:54:30.470015+00:00"
+    },
+    {
+      "id": "4bab364bfeb04c6d98f26b352037f32c",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-19T06:56:02.252688+00:00"
+    },
+    {
+      "id": "f324891cb8014accae2c7068d4b83833",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773903362.255688,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-19T06:56:02.265688+00:00"
+    },
+    {
+      "id": "2226ef1cd7424a269126232aa00252fe",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-19T08:45:09.173982+00:00"
+    },
+    {
+      "id": "62accf03e8b94b0d87b509221db79b88",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773909909.1779804,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-19T08:45:09.187012+00:00"
+    },
+    {
+      "id": "9a6a0fa3eaca4966a7319a75031f7609",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-19T11:04:52.545334+00:00"
+    },
+    {
+      "id": "0f521e8afad442c59599c6da53dbb161",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773918292.5588887,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-19T11:04:52.590884+00:00"
+    },
+    {
+      "id": "6064f3e888c94d088e91524451f61bd7",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-19T11:32:23.841926+00:00"
+    },
+    {
+      "id": "0474547ea7cf458689c7877c1eadcd36",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773919943.8449192,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-19T11:32:23.853919+00:00"
+    },
+    {
+      "id": "8cfba8e9f3204d3f966bcb003292d597",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-19T15:38:08.783233+00:00"
+    },
+    {
+      "id": "66730b5463ce4870b476e1a55cc0e4ef",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773934688.7882316,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-19T15:38:08.815870+00:00"
+    },
+    {
+      "id": "c6bd1226e9d3437aa156b6c4a6ae0a77",
+      "kind": "check",
+      "detail": "Check skill updates",
+      "payload": {
+        "raw": {
+          "ok": false,
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "[WinError 2] The system cannot find the file specified",
+          "cmd": "npx skills check"
+        }
+      },
+      "ts": "2026-03-20T04:54:13.723218+00:00"
+    },
+    {
+      "id": "f5eef49fe19c4891b7fb4557bc97f144",
+      "kind": "scheduled",
+      "detail": "Scheduled scan (weekly)",
+      "payload": {
+        "check": {
+          "ok": false,
+          "raw": {
+            "ok": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "[WinError 2] The system cannot find the file specified",
+            "cmd": "npx skills check"
+          }
+        },
+        "update": {
+          "ok": true,
+          "skipped": true
+        },
+        "ts": 1773982453.7282274,
+        "interval": "weekly"
+      },
+      "ts": "2026-03-20T04:54:13.755772+00:00"
+    }
+  ],
+  "approvals": [],
+  "last_scan": null,
+  "updated_at": "2026-03-20T04:54:13.755772+00:00"
+}

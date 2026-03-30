@@ -1,0 +1,44 @@
+<Page
+    x:Class="Awarenet.ControlCenter.Pages.ApprovalsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*">
+        <StackPanel Spacing="4">
+            <TextBlock Text="Approvals" FontSize="22" FontWeight="SemiBold" />
+            <TextBlock Text="Review pending approvals (policy gate). Approve, reject, or approve &amp; continue." Opacity="0.8" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8" Margin="0,12,0,12">
+            <Button x:Name="RefreshButton" Content="Refresh" />
+            <CheckBox x:Name="IncludeHistoryCheck" Content="Include history" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" RowDefinitions="Auto,*">
+            <muxc:InfoBar x:Name="ErrorBar"
+                          Grid.Row="0"
+                          IsOpen="False"
+                          Severity="Error"
+                          Title="Error"
+                          Message="-" />
+
+            <ListView x:Name="ApprovalsList" Grid.Row="1" SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Spacing="4" Margin="0,8,0,8">
+                            <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                            <TextBlock Text="{Binding Detail}" TextWrapping="Wrap" Opacity="0.85" />
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button Content="Approve" Tag="{Binding Id}" Click="Approve_Click" />
+                                <Button Content="Approve &amp; Continue" Tag="{Binding Id}" Click="ApproveContinue_Click" />
+                                <Button Content="Reject" Tag="{Binding Id}" Click="Reject_Click" />
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
+

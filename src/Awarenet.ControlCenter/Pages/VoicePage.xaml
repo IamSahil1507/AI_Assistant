@@ -1,0 +1,35 @@
+<Page
+    x:Class="Awarenet.ControlCenter.Pages.VoicePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*">
+        <StackPanel Spacing="4">
+            <TextBlock Text="Voice" FontSize="22" FontWeight="SemiBold" />
+            <TextBlock Text="Offline STT/TTS via backend (/assistant/voice/*)." Opacity="0.8" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="0,12,0,12">
+            <TextBox x:Name="SpeakBox" PlaceholderText="Text to speak…" />
+            <Button x:Name="SpeakButton" Grid.Column="1" Content="Speak" />
+            <Button x:Name="ListenButton" Grid.Column="2" Content="Listen (5s)" />
+        </Grid>
+
+        <Grid Grid.Row="2" RowDefinitions="Auto,*">
+            <muxc:InfoBar x:Name="ErrorBar"
+                          Grid.Row="0"
+                          IsOpen="False"
+                          Severity="Error"
+                          Title="Error"
+                          Message="-" />
+            <TextBox x:Name="ResultBox"
+                     Grid.Row="1"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </Grid>
+    </Grid>
+</Page>
+

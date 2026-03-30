@@ -1,0 +1,42 @@
+.superpowers/
+.tmp_video_frames/
+
+__pycache__/
+*.pyc
+
+node_modules/
+dist/
+build/
+
+.venv/
+venv/
+
+# Repo snapshots / archives (not part of runtime)
+backup/
+
+# Local user config override (can contain machine-specific values)
+.openclaw/
+
+# C# / .NET Build Artifacts
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+
+# Large Backups & Media (from your previous commit)
+backups/
+*.7z
+*.zip
+*.mp4
+
+# Logs and specific data
+logs/*.log
+
+# Block accidental large files
+-C
+*.7z
+*.zip
+*.mp4
+*.exe
+*.dll

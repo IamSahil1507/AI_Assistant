@@ -1,0 +1,35 @@
+{
+  "notices": [],
+  "history": [
+    {
+      "kind": "learned",
+      "detail": "Learned mapping for \"[fri 2026-03-13 13:16 gmt+5:30] open gmail in default chrome account and draft a leave application for 15 days from 15th march and put it on draft\"",
+      "benefit": "Faster response next time without LLM delay."
+    },
+    {
+      "kind": "learned",
+      "detail": "Preferred Chrome profile set to Default",
+      "benefit": "Gmail and Chrome actions will target your default profile automatically."
+    },
+    {
+      "kind": "learned",
+      "detail": "Preferred Chrome profile set to Default",
+      "benefit": "Gmail and Chrome actions will target your default profile automatically."
+    },
+    {
+      "kind": "learned",
+      "detail": "Learned mapping for \"draft a mail from my default chrome account about leave\"",
+      "benefit": "Faster response next time without LLM delay."
+    },
+    {
+      "kind": "learned",
+      "detail": "Learned mapping for \"<attachments>\n<attachment id=\"file:awarenet_proxy_debug.log\">\n</attachment>\n</attachments>\n<context>\nthe current date is march 13, 2026.\nterminals:\nterminal: powershell\nlast command: & c:\\ai_assistant\\backup\\2026-03-12-1651\\.venv\\scripts\\activate.ps1\ncwd: c:\\ai_assistant\nexit code: 0\n\n</context>\n<editorcontext>\nthe user's current file is c:\\ai_assistant\\logs\\awarenet_proxy_debug.log. the current selection is from line 1 to line 30.\n</editorcontext>\n<reminderinstructions>\nwhen using the insert_edit_into_file tool, avoid repeating existing code, instead use a line comment with \\`...existing code...\\` to represent regions of unchanged code.\nwhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\nit is much faster to edit using the replace_string_in_file tool. prefer the replace_string_in_file tool for making edits and only fall back to insert_edit_into_file if it fails.\n</reminderinstructions>\n<userrequest>\nanalyze currently opened whole project \n</userrequest>\"",
+      "benefit": "Faster response next time without LLM delay."
+    },
+    {
+      "kind": "learned",
+      "detail": "Learned mapping for \"<context>\nthe current date is march 13, 2026.\nterminals:\nterminal: powershell\nlast command: & c:\\ai_assistant\\backup\\2026-03-12-1651\\.venv\\scripts\\activate.ps1\ncwd: c:\\ai_assistant\nexit code: 0\n\n</context>\n<editorcontext>\nthe user's current file is c:\\ai_assistant\\logs\\awarenet_proxy_debug.log. \n</editorcontext>\n<reminderinstructions>\nwhen using the insert_edit_into_file tool, avoid repeating existing code, instead use a line comment with \\`...existing code...\\` to represent regions of unchanged code.\nwhen using the replace_string_in_file tool, include 3-5 lines of unchanged code before and after the string you want to replace, to make it unambiguous which part of the file should be edited.\nit is much faster to edit using the replace_string_in_file tool. prefer the replace_string_in_file tool for making edits and only fall back to insert_edit_into_file if it fails.\n</reminderinstructions>\n<userrequest>\nanalyze currently opened whole project \n</userrequest>\"",
+      "benefit": "Faster response next time without LLM delay."
+    }
+  ]
+}

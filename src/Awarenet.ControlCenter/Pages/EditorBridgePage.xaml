@@ -1,0 +1,35 @@
+<Page
+    x:Class="Awarenet.ControlCenter.Pages.EditorBridgePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="16" RowDefinitions="Auto,Auto,*">
+        <StackPanel Spacing="4">
+            <TextBlock Text="Editor Bridge" FontSize="22" FontWeight="SemiBold" />
+            <TextBlock Text="Health + quick actions via editor extension bridge." Opacity="0.8" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8" Margin="0,12,0,12">
+            <Button x:Name="HealthButton" Content="Health" />
+            <TextBox x:Name="PathBox" Width="520" PlaceholderText="Quick open file path…" />
+            <Button x:Name="OpenButton" Content="Open file" />
+        </StackPanel>
+
+        <Grid Grid.Row="2" RowDefinitions="Auto,*">
+            <muxc:InfoBar x:Name="ErrorBar"
+                          Grid.Row="0"
+                          IsOpen="False"
+                          Severity="Error"
+                          Title="Error"
+                          Message="-" />
+            <TextBox x:Name="ResultBox"
+                     Grid.Row="1"
+                     IsReadOnly="True"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </Grid>
+    </Grid>
+</Page>
+

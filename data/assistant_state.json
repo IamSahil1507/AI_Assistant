@@ -1,0 +1,167 @@
+{
+  "preferences": {},
+  "tasks": {
+    "queue": [],
+    "history": []
+  },
+  "action_log": [],
+  "approvals": {
+    "pending": [],
+    "history": []
+  },
+  "operator": {
+    "active": null,
+    "history": []
+  },
+  "model_events": [
+    {
+      "id": "9b95dcf1d34941f593f17b19f01478bc",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-18T15:26:02.154347+00:00"
+    },
+    {
+      "id": "8bffa16f1b4f4acd8152756b0e429ec1",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-18T15:27:06.707839+00:00"
+    },
+    {
+      "id": "1abc685841354e8dbef477dd30c04111",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-18T15:28:06.729843+00:00"
+    },
+    {
+      "id": "a8caef8369f34881b2fc9ab13918b454",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-19T09:53:53.876387+00:00"
+    },
+    {
+      "id": "7bf37afe57da46d797f8f292de831cdf",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-19T09:53:57.518891+00:00"
+    },
+    {
+      "id": "d9a04077068f45dcaef4fa35bf49dc26",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-19T15:39:45.970203+00:00"
+    },
+    {
+      "id": "c2f57c78a8df47fe93961c6d6e27b654",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-19T15:39:55.226953+00:00"
+    },
+    {
+      "id": "8686dc2cb7f74295871ccdac6e96fa85",
+      "event": "select",
+      "model": "llama3.2:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-03-19T15:41:43.993202+00:00"
+    }
+  ],
+  "system_events": [
+    {
+      "id": "1709e7e4816c40a08aea6dc15d183b89",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-18T13:58:33.954903+00:00"
+    },
+    {
+      "id": "0b718edf1c7947c4bafa63cfc64956e9",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-18T15:29:54.684055+00:00"
+    },
+    {
+      "id": "edc307b615014aa997718d0fcf7a6073",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-19T06:54:30.456781+00:00"
+    },
+    {
+      "id": "c9dd9ec315824bf09f6d574601c282f1",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-19T06:56:02.241673+00:00"
+    },
+    {
+      "id": "457d2ef48a6a4e6b987424a27d271533",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-19T08:45:09.170978+00:00"
+    },
+    {
+      "id": "a1ea808c53fd47a7941db2d6baad32f0",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-19T11:04:52.541011+00:00"
+    },
+    {
+      "id": "9f1422cee11448c19718155cd8fa548f",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-19T11:32:23.840919+00:00"
+    },
+    {
+      "id": "f896f45db31740288e5cb20a7636d6c2",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-19T15:38:08.782230+00:00"
+    },
+    {
+      "id": "32bc3dd9773045798d00da45398e2807",
+      "level": "error",
+      "message": "Skills CLI exception",
+      "source": "skills",
+      "detail": "[WinError 2] The system cannot find the file specified",
+      "ts": "2026-03-20T04:54:13.721241+00:00"
+    }
+  ],
+  "gateway_cache": {},
+  "vscode": {
+    "last": null,
+    "history": []
+  },
+  "notes": [],
+  "status": {
+    "last_heartbeat": "2026-03-20T05:37:16.009459+00:00",
+    "proactive_status": "running"
+  },
+  "updated_at": "2026-03-20T05:37:16.009459+00:00"
+}

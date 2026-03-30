@@ -1,0 +1,7 @@
+﻿{
+  "listen_host": "127.0.0.1",
+  "listen_port": 11435,
+  "awarenet_base_url": "http://127.0.0.1:8000",
+  "model_id": "awarenet:v1",
+  "model_name": "awarenet:v1"
+}
