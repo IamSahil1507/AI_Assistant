@@ -19,8 +19,9 @@ This design focuses on:
 - tray-first background behavior
 - configurable wake methods and startup profiles
 - a strong sci-fi visual language
-- fast access to `voice command`, `statistics`, `report`, `shortcuts`, `configurations`, `open`, `pop-ups`, and `exit`
+- fast access to `open ui`, `voice command`, `statistics`, `report`, `shortcuts`, `configurations`, `pop-ups`, and `exit`
 - a clean transition away from the current Awarenet desktop/frontend shell
+- explicit feature inheritance from the existing Awarenet web and native codebases so NEXUS does not lose capability during migration
 
 ---
 
@@ -59,6 +60,150 @@ It supports these surfaces inside a single shell:
   - primary command deck for all advanced interaction
 
 This keeps the product coherent while still supporting different daily usage patterns.
+
+---
+
+## Awarenet Feature Inheritance Rule
+
+NEXUS must not regress below the combined feature set of the current Awarenet codebase.
+
+There are two legacy frontend surfaces today:
+
+- the React/Vite Awarenet web UI under `awarenet-ui`
+- the native WinUI Awarenet Control Center under `src/Awarenet.ControlCenter`
+
+NEXUS replaces them as the primary shell, but it must absorb the useful features of both.
+
+### Migration principle
+
+- legacy Awarenet features are migration requirements, not optional inspiration
+- if NEXUS changes layout, it must still preserve the workflow
+- if a legacy feature is weak, NEXUS should redesign it instead of deleting it
+
+### Feature parity objective
+
+Before Awarenet is fully retired from the primary path, NEXUS should cover:
+
+- monitoring and observability features
+- control and configuration features
+- operator, approval, and tool-surface features
+- browser, editor, desktop, and gateway utility views
+- skills, snapshots, and diagnostics workflows
+
+---
+
+## Legacy Feature Inventory To Carry Forward
+
+The following inventory is derived from the existing Awarenet codebase and should be explicitly represented in NEXUS.
+
+### From the Awarenet web UI
+
+- `Overview`
+  - assistant status
+  - gateway health
+  - policy state
+  - proactive state
+  - memory/action summaries
+- `Models`
+  - discovered models
+  - loaded models
+  - model event history
+  - routing visibility
+- `Tasks`
+  - queue and history
+  - quick-create with priority
+- `Memory`
+  - preferences
+  - notes
+  - VS Code context snapshot
+- `Policy`
+  - autonomy
+  - safety lock
+  - allow-scope editing
+- `Approvals`
+  - pending queue
+  - approve
+  - reject
+  - approve-and-continue
+  - history
+- `Operator`
+  - active task state
+  - operator history
+- `Lessons`
+  - lessons tail
+  - recent tool/error visibility
+- `Voice`
+  - speak
+  - listen once
+  - result inspection
+- `Logs`
+  - action logs
+  - system logs
+  - proactive logs
+  - log file listing
+  - log tail viewing
+- `Config`
+  - core config editing
+  - UI config editing
+  - snapshot creation
+  - snapshot restore
+- `Endpoints Explorer`
+  - arbitrary request testing
+  - method selection
+  - raw response inspection
+- `Skills`
+  - settings
+  - scan
+  - installed list
+  - approvals
+  - history
+- `Gateway proxy`
+  - mirrored OpenClaw sections through backend proxy
+- `Awarenet UI preferences`
+  - poll interval
+  - summary-first vs raw-first
+  - sidebar density / compact mode
+
+### From the native Awarenet WinUI shell
+
+- `Chats`
+  - connection state
+  - chat list
+  - history loading
+  - streaming responses
+  - attachments
+  - voice command in chat
+  - `/op` operator invocation from chat
+- `Operator`
+  - goal-driven task start
+  - active summary
+  - artifacts list
+  - history
+- `Approvals`
+  - native approval actions
+- `Voice`
+  - native speak/listen view
+- `Browser Sessions`
+  - open URL through operator
+  - load artifacts by task id
+  - preview captured images
+- `Editor Bridge`
+  - health check
+  - quick open-file action
+- `Desktop Automation`
+  - list windows
+  - launch app
+  - full screenshot action
+- `Config / Modules`
+  - capabilities visibility
+  - module availability reasons
+  - enable toggles
+  - mode changes
+  - scope changes
+- `Logs`
+  - native logs view
+- `Lessons`
+  - native lessons view
 
 ---
 
@@ -277,12 +422,24 @@ Mission Control is the full-screen NEXUS interface.
   - Overview
   - Command
   - Operator
+  - Approvals
   - Voice
+  - Browser
+  - Editor
+  - Desktop
+  - Models
+  - Tasks
+  - Memory
+  - Policy
   - Reports
   - Stats
   - Shortcuts
+  - Skills
   - Modules
+  - Gateway
+  - Explorer
   - Logs
+  - Lessons
   - Settings
 - `Center Work Surface`
   - primary interactive area by selected mode
@@ -303,22 +460,42 @@ Mission Control is the full-screen NEXUS interface.
   - alerts
   - latest activity
   - fast actions
+  - gateway diagnostics
+  - policy and memory summary
 - `Command`
   - conversational interaction
   - text and voice entry
   - streaming response
   - artifact-aware responses
+  - chat session list
+  - attachment workflow
+  - operator command shortcuts from chat
 - `Operator`
   - step timeline
   - policy decisions
   - approvals
   - artifacts
   - retry / stop / inspect
+- `Approvals`
+  - pending queue
+  - history
+  - approve, reject, and approve-and-continue actions
 - `Voice`
   - microphone state
   - wake settings
   - speak/listen testing
   - recent voice events
+- `Browser`
+  - operator browser actions
+  - session artifacts
+  - preview gallery
+- `Editor`
+  - bridge health
+  - quick file actions
+- `Desktop`
+  - windows list
+  - app launch
+  - screenshots
 - `Reports`
   - daily summaries
   - session reports
@@ -330,17 +507,55 @@ Mission Control is the full-screen NEXUS interface.
   - latency
   - operator success rates
   - pending failures
+- `Models`
+  - discovered models
+  - loaded models
+  - routing visibility
+  - model history
+- `Tasks`
+  - queue
+  - history
+  - quick-create
+  - priority
+- `Memory`
+  - preferences
+  - notes
+  - editor context
+- `Policy`
+  - autonomy
+  - safety lock
+  - scope editing
 - `Shortcuts`
   - user-defined quick actions and grouped workflows
+- `Skills`
+  - settings
+  - installed list
+  - scans
+  - approvals
+  - history
 - `Modules`
   - backend capability and feature view
   - module availability and reasons
+- `Gateway`
+  - gateway diagnostics
+  - proxy explorer
+  - mirrored gateway tools and sections
+- `Explorer`
+  - direct endpoint testing
+  - method selection
+  - request body editing
+  - raw response inspection
 - `Logs`
   - action logs
   - error streams
   - operator and shell events
+- `Lessons`
+  - lessons list
+  - self-improve visibility
 - `Settings`
   - complete shell configurability
+  - backend/runtime config editing
+  - config snapshot creation and restore
 
 ### Actionability rule
 
@@ -351,6 +566,16 @@ Every major screen must answer:
 - `What can I do next?`
 
 NEXUS must prioritize these answers over decorative dashboards.
+
+### Legacy parity UX rule
+
+For every legacy Awarenet screen, NEXUS should provide one of these outcomes:
+
+- a dedicated Mission Control screen
+- a subsection inside a richer NEXUS screen
+- a tray/orb quick action with drill-down into Mission Control
+
+No legacy operational feature should disappear without an explicit replacement.
 
 ---
 
@@ -469,6 +694,11 @@ NEXUS must be deeply configurable through its own UI.
   - auto-discovery
   - reconnect behavior
   - optional service launcher hooks
+- `Legacy Parity`
+  - show raw JSON by default
+  - summary-first vs raw-first presentation
+  - compact navigation density
+  - migration shortcuts for former Awarenet sections
 - `Safety`
   - approval defaults
   - emergency stop visibility
@@ -500,19 +730,48 @@ NEXUS should reuse the existing assistant backend rather than replacing it first
 - `POST /assistant/features`
 - `GET /assistant/config`
 - `POST /assistant/config`
+- `POST /assistant/config/snapshot`
+- `GET /assistant/config/snapshots`
+- `POST /assistant/config/restore`
 - `GET /assistant/operator/state`
 - `POST /assistant/operator/start`
 - `POST /assistant/operator/step`
 - `POST /assistant/operator/execute`
+- `GET /assistant/operator/artifacts`
 - `GET /assistant/chat/list`
 - `GET /assistant/chat/history`
+- `POST /assistant/chat/attachments`
 - `POST /assistant/chat/send`
 - `POST /assistant/chat/send_stream`
+- `GET /assistant/tasks`
+- `POST /assistant/tasks`
+- `GET /assistant/memory`
+- `POST /assistant/memory`
+- `GET /assistant/policy`
+- `POST /assistant/policy`
 - `POST /assistant/voice/speak`
 - `POST /assistant/voice/listen_once`
 - `POST /assistant/voice/command`
 - `GET /assistant/models/status`
+- `GET /assistant/models/history`
+- `GET /assistant/openclaw/health`
+- `POST /assistant/openclaw/proxy`
 - `GET /assistant/logs/action`
+- `GET /assistant/logs/system`
+- `GET /assistant/logs/proactive`
+- `GET /assistant/logs/files`
+- `GET /assistant/lessons`
+- `GET /assistant/skills/status`
+- `GET /assistant/skills/history`
+- `GET /assistant/skills/approvals`
+- `POST /assistant/skills/approvals`
+- `GET /assistant/skills/installed`
+- `POST /assistant/skills/scan`
+- `POST /assistant/skills/settings`
+- `GET /assistant/editor/health`
+- `GET /assistant/desktop/windows`
+- `POST /assistant/desktop/launch`
+- `POST /assistant/desktop/screenshot_full`
 - approval endpoints
 - report/stat endpoints added or formalized as needed
 
@@ -614,9 +873,22 @@ To avoid another oversized and clumsy UI rewrite, NEXUS should ship in slices.
 - overview
 - command
 - operator
+- approvals
+- browser
+- editor
+- desktop
+- models
+- tasks
+- memory
+- policy
 - reports
 - stats
 - shortcuts
+- skills
+- gateway explorer
+- endpoint explorer
+- logs
+- lessons
 - settings
 
 ### Slice 5: Wake and popup systems
@@ -647,6 +919,22 @@ The current Awarenet UI is considered legacy after NEXUS begins implementation.
 - existing Awarenet desktop/web UI can remain temporarily as fallback during transition
 - new user-facing investment goes to NEXUS, not the old Awarenet frontend
 - create NEXUS as the new default desktop shell and remove Awarenet from the primary user path after cutover
+
+### Cutover requirement
+
+Awarenet should not be considered replaceable until NEXUS covers the combined legacy feature inventory listed in this document.
+
+### Recommended migration checkpoints
+
+- `Checkpoint 1`
+  - NEXUS shell foundation exists
+  - Overview, Command, Operator, and Settings are live
+- `Checkpoint 2`
+  - parity for Approvals, Voice, Browser, Editor, Desktop, Logs, and Modules
+- `Checkpoint 3`
+  - parity for Models, Memory, Policy, Skills, Gateway explorer, Lessons, and config-snapshot workflows
+- `Checkpoint 4`
+  - tray, orb, and full-screen Mission Control flow is stable enough to remove Awarenet from the primary path
 
 This avoids breaking working backend functionality while still allowing a decisive product reset.
 
