@@ -1,0 +1,51 @@
+# ══════════════════════════════════════════
+# NEXUS Agent OS — Dependencies
+# Calibrated for HP Victus 16 (GTX 1650 4GB)
+# ══════════════════════════════════════════
+
+# === Layer 1: Brain (Ollama client) ===
+requests>=2.32.0
+
+# === Layer 2: Vision ===
+mss>=9.0.0              # Fast screenshot capture (~10ms)
+Pillow>=10.0.0           # Image processing
+pytesseract>=0.3.10      # OCR text extraction
+# NOTE: Also install Tesseract OCR engine:
+#   choco install tesseract -y
+#   OR download from: https://github.com/UB-Mannheim/tesseract/wiki
+
+# === Layer 3: Action ===
+PyAutoGUI>=0.9.54        # Mouse + keyboard automation
+playwright>=1.54.0       # Browser automation
+pywinauto>=0.6.9         # Windows UI automation
+pyperclip>=1.9.0         # Clipboard operations
+
+# === Layer 4: Planning (Agent Loop) ===
+# No external deps — pure Python state machine
+
+# === Layer 5: Situational Intelligence ===
+psutil>=6.0.0            # RAM/CPU monitoring
+pynvml>=12.0.0           # NVIDIA GPU VRAM monitoring
+# pywin32 — install separately: pip install pywin32
+
+# === Layer 7: Internet Research ===
+duckduckgo-search>=7.0.0 # Free web search (no API key)
+beautifulsoup4>=4.12.0   # HTML content extraction
+httpx>=0.27.0            # Async HTTP client
+
+# === Layer 8: Memory (Phase 5) ===
+# chromadb>=0.5.0         # Vector store (uncomment when ready)
+# sentence-transformers   # Local embeddings (uncomment when ready)
+
+# === Layer 9: Safety ===
+keyboard>=0.13.5         # Global hotkey (kill switch)
+
+# === Server ===
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# === Voice (existing) ===
+pyttsx3>=2.99
+vosk>=0.3.45
+sounddevice>=0.5.2
+numpy>=2.4.0

@@ -6,18 +6,16 @@ from typing import Any, Dict, Optional
 import re
 from uuid import uuid4
 from pathlib import Path
+import logging
 
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import StreamingResponse
 
-from tools.openclaw_bridge import OpenClawBridge
+# Bootstrap lazy-loads heavy components on demand
+from tools import server_bootstrap
 from tools import assistant_state
-from tools.operator_controller import OperatorController, PlanStep
-from tools.proactive_engine import ProactiveEngine
-from tools.skills_manager import SkillsManager
 from tools import skills_state
 from tools import config_store
 from tools import operator_troubleshoot
@@ -27,6 +25,14 @@ from tools import fix_executor
 from tools import voice
 from tools.operator_tools import recipes
 from tools import chat_store
+
+# Quality improvements
+from tools.request_processor import get_request_processor, classify_user_request, evaluate_model_response
+from tools.prompt_templates import get_system_prompt
+from tools.context_injector import ContextBuilder
+from tools.task_detector import TaskDetector
+
+logger = logging.getLogger(__name__)
 
 AWARNET_MODELS = {"awarenet", "awarenet-v1", "awarenet:v1"}
 
@@ -39,15 +45,14 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-bridge = OpenClawBridge()
-operator = OperatorController(bridge)
-skills_manager = SkillsManager(lambda: bridge.config_manager.config)
-proactive = ProactiveEngine(lambda: bridge.config_manager.config, tick_callbacks=[skills_manager.scheduled_tick])
+# Lazy-loaded components via proxy objects (initialize on first access)
+bridge = server_bootstrap.bridge_proxy
+operator = server_bootstrap.operator_proxy
+skills_manager = server_bootstrap.skills_manager_proxy
+proactive = server_bootstrap.proactive_proxy
+
 LOGS_DIR = Path(__file__).resolve().parents[1] / "logs"
 UI_DIST = Path(__file__).resolve().parents[1] / "awarenet-ui" / "dist"
-
-if UI_DIST.exists():
-    app.mount("/awarenet", StaticFiles(directory=UI_DIST, html=True), name="awarenet")
 GATEWAY_MARKERS = (
     "openclaw-control-ui",
     "Direct gateway chat session",
@@ -206,6 +211,40 @@ def _compute_capabilities() -> Dict[str, Any]:
     modules["autofix"] = ok()
 
     return {"ok": True, "modules": modules}
+
+
+def _desktop_artifacts_dir() -> Path:
+    path = Path(__file__).resolve().parents[1] / ".superpowers" / "desktop"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def _voice_artifacts_dir() -> Path:
+    path = Path(__file__).resolve().parents[1] / ".superpowers" / "voice"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def _build_plan_step(
+    *,
+    goal: str,
+    step_id: str,
+    tool: str,
+    action: Dict[str, Any],
+    risk: str = "normal",
+    success_criteria: str = "",
+):
+    from tools.operator_controller import PlanStep
+
+    normalized_risk = "risky" if str(risk).strip().lower() == "risky" else "normal"
+    return PlanStep(
+        goal=goal,
+        step_id=step_id,
+        tool=tool,  # type: ignore[arg-type]
+        action=action,
+        risk=normalized_risk,  # type: ignore[arg-type]
+        success_criteria=success_criteria,
+    )
 
 
 @app.get("/assistant/health")
@@ -406,6 +445,163 @@ async def assistant_chat_attachments(
     }
 
 
+# ============================================================================
+# QUALITY IMPROVEMENTS - Better output, task detection, context awareness
+# ============================================================================
+
+
+@app.post("/assistant/classify")
+async def assistant_classify(request: Request) -> Dict[str, Any]:
+    """
+    Classify user request intent (query, task, analysis, debug, etc.)
+    Helps route requests to appropriate handlers.
+    """
+    payload = await request.json()
+    user_text = str(payload.get("message") or "").strip()
+    
+    if not user_text:
+        raise HTTPException(status_code=400, detail="missing_message")
+    
+    classification = classify_user_request(user_text)
+    
+    return {
+        "status": "ok",
+        "classification": {
+            "intent": classification["intent_name"],
+            "confidence": classification["confidence"],
+            "reason": classification["reason"],
+            "needs_clarification": classification["needs_clarification"],
+            "clarification_prompt": classification["clarification_prompt"],
+            "is_risky": classification["is_risky"],
+            "warning": classification["warning"],
+        },
+    }
+
+
+@app.post("/assistant/evaluate-response")
+async def assistant_evaluate_response(request: Request) -> Dict[str, Any]:
+    """
+    Evaluate quality of a model response.
+    Returns quality score, detected issues, and improvement suggestions.
+    """
+    payload = await request.json()
+    response = str(payload.get("response") or "").strip()
+    user_request = str(payload.get("request") or "").strip()
+    
+    if not response:
+        raise HTTPException(status_code=400, detail="missing_response")
+    
+    evaluation = evaluate_model_response(response, user_request)
+    
+    return {
+        "status": "ok",
+        "evaluation": {
+            "quality": evaluation["quality_name"],
+            "score": evaluation["score"],
+            "issues": evaluation["issues"],
+            "warnings": evaluation["warnings"],
+            "suggestions": evaluation["suggestions"],
+            "risk_level": evaluation["risk_level"],
+        },
+    }
+
+
+@app.post("/assistant/chat/send-v2")
+async def assistant_chat_send_v2(request: Request) -> Dict[str, Any]:
+    """
+    Enhanced chat endpoint with quality improvements.
+    Includes: intent classification, context injection, better prompting, response evaluation.
+    """
+    payload = await request.json()
+    if not isinstance(payload, dict):
+        raise HTTPException(status_code=400, detail="Invalid payload")
+
+    chat_id = str(payload.get("chat_id") or "").strip()
+    if not chat_id:
+        chat_id = chat_store.new_chat_id()
+
+    model_id = str(payload.get("model") or "assistant").strip()
+    user_text = str(payload.get("message") or "").strip()
+    if not user_text:
+        raise HTTPException(status_code=400, detail="missing_message")
+
+    # Step 1: Classify request to understand intent
+    classification = classify_user_request(user_text)
+    
+    # Step 2: Check if clarification needed
+    if classification["needs_clarification"]:
+        return {
+            "status": "clarification_needed",
+            "chat_id": chat_id,
+            "question": classification["clarification_prompt"],
+            "intent": classification["intent_name"],
+        }
+    
+    # Step 3: Warn about risky operations
+    if classification["should_ask_confirmation"]:
+        return {
+            "status": "requires_confirmation",
+            "chat_id": chat_id,
+            "message": user_text,
+            "warning": "⚠️ This action could modify or delete files. Please confirm.",
+            "intent": classification["intent_name"],
+        }
+    
+    # Step 4: Run the model
+    try:
+        if model_id in AWARNET_MODELS:
+            user_text_clean = _sanitize_gateway_text(user_text)
+            result = bridge.execute_awarenet(user_text_clean, runtime_overrides=None)
+            assistant_text = str(result.get("response") or "")
+            used_model = model_id
+        else:
+            # Use improved system prompt
+            system_prompt = get_system_prompt("assistant")
+            result = bridge.run_model(
+                model_id, 
+                user_text, 
+                system_prompt=system_prompt if not payload.get("system_prompt") else payload.get("system_prompt"),
+                temperature=payload.get("temperature")
+            )
+            assistant_text = str(result.get("response") or result.get("error") or "")
+            used_model = model_id
+    except Exception as e:
+        logger.error(f"Error executing model: {e}")
+        assistant_text = f"Error: Unable to process request - {str(e)[:100]}"
+        used_model = model_id
+
+    # Step 5: Evaluate response quality
+    evaluation = evaluate_model_response(assistant_text, user_text)
+
+    # Step 6: Store in history
+    root = Path(__file__).resolve().parents[1]
+    chat_store.record_user_and_assistant(
+        root,
+        chat_id,
+        user_text=user_text,
+        assistant_text=assistant_text,
+        model=used_model,
+        system_prompt=payload.get("system_prompt"),
+        attachments=payload.get("attachments", []) if isinstance(payload.get("attachments"), list) else [],
+    )
+
+    return {
+        "status": "ok",
+        "chat_id": chat_id,
+        "model": used_model,
+        "response": assistant_text,
+        "classification": {
+            "intent": classification["intent_name"],
+            "confidence": classification["confidence"],
+        },
+        "quality": {
+            "score": evaluation["score"],
+            "quality": evaluation["quality_name"],
+            "warnings": evaluation["warnings"],
+        },
+    }
+
+
 @app.get("/assistant/operator/artifacts")
 async def assistant_operator_artifacts(task_id: str, tail: int = 50) -> Dict[str, Any]:
     """
@@ -513,7 +709,7 @@ async def assistant_desktop_launch(request: Request) -> Dict[str, Any]:
     if not command:
         raise HTTPException(status_code=400, detail="missing_command")
     try:
-        result = desktop_windows.launch_app(command=command)
+        result = desktop_windows.launch_app(command=command, artifacts_dir=_desktop_artifacts_dir())
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     return {"status": "ok", "result": result}
@@ -524,7 +720,7 @@ async def assistant_desktop_screenshot_full() -> Dict[str, Any]:
     from tools.operator_tools import desktop_windows
 
     try:
-        result = desktop_windows.screenshot_full()
+        result = desktop_windows.screenshot_full(artifacts_dir=_desktop_artifacts_dir())
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     return {"status": "ok", "result": result}
@@ -541,7 +737,10 @@ async def assistant_desktop_screenshot_window_title(request: Request) -> Dict[st
     if not title:
         raise HTTPException(status_code=400, detail="missing_title")
     try:
-        result = desktop_windows.screenshot_window_title(title=title)
+        result = desktop_windows.screenshot_window_title(
+            title_contains=title,
+            artifacts_dir=_desktop_artifacts_dir(),
+        )
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     return {"status": "ok", "result": result}
@@ -632,6 +831,18 @@ def _extract_system_and_user(messages: Any) -> tuple[Optional[str], Optional[str
     return system_prompt, user_text
 
 
+def _awarenet_index_response() -> FileResponse:
+    if not UI_DIST.exists():
+        raise HTTPException(status_code=404, detail="Awarenet UI not built")
+    return FileResponse(UI_DIST / "index.html")
+
+
+@app.get("/awarenet")
+@app.get("/awarenet/")
+async def awarenet_index():
+    return _awarenet_index_response()
+
+
 @app.get("/awarenet/{full_path:path}")
 async def awarenet_spa(full_path: str):
     if not UI_DIST.exists():
@@ -639,7 +850,7 @@ async def awarenet_spa(full_path: str):
     candidate = UI_DIST / full_path
     if candidate.is_file():
         return FileResponse(candidate)
-    return FileResponse(UI_DIST / "index.html")
+    return _awarenet_index_response()
 
 
 @app.get("/v1/models")
@@ -839,12 +1050,12 @@ async def assistant_approvals_continue(request: Request) -> Dict[str, Any]:
         task_id = str(approval.get("detail") or "").split()[-1]
 
     try:
-        step = PlanStep(
+        step = _build_plan_step(
             goal=str(plan.get("goal") or "approved_step"),
             step_id=str(plan.get("step_id") or "approved"),
-            tool=str(plan.get("tool") or "shell"),  # type: ignore[arg-type]
+            tool=str(plan.get("tool") or "shell"),
             action=plan.get("action") if isinstance(plan.get("action"), dict) else {},
-            risk=("risky" if str(plan.get("risk") or "normal") == "risky" else "normal"),  # type: ignore[arg-type]
+            risk=str(plan.get("risk") or "normal"),
             success_criteria=str(plan.get("success_criteria") or ""),
         )
         result = await operator.execute_plan_step_async(task_id, step)
@@ -1035,7 +1246,7 @@ async def assistant_voice_speak(request: Request) -> Dict[str, Any]:
     if not text:
         raise HTTPException(status_code=400, detail="missing_text")
     cfg = bridge.config_manager.config.get("voice", {}) if isinstance(bridge.config_manager.config.get("voice"), dict) else {}
-    artifacts_dir = Path(__file__).resolve().parents[1] / ".superpowers" / "voice"
+    artifacts_dir = _voice_artifacts_dir()
     result = voice.speak(
         text=text,
         artifacts_dir=artifacts_dir,
@@ -1051,7 +1262,7 @@ async def assistant_voice_listen_once(request: Request) -> Dict[str, Any]:
     if not isinstance(payload, dict):
         raise HTTPException(status_code=400, detail="Invalid payload")
     cfg = bridge.config_manager.config.get("voice", {}) if isinstance(bridge.config_manager.config.get("voice"), dict) else {}
-    artifacts_dir = Path(__file__).resolve().parents[1] / ".superpowers" / "voice"
+    artifacts_dir = _voice_artifacts_dir()
     seconds = int(payload.get("seconds") or cfg.get("listen_seconds") or 5)
     result = voice.listen_once(
         artifacts_dir=artifacts_dir,
@@ -1089,7 +1300,7 @@ async def assistant_operator_browser_open_url(request: Request) -> Dict[str, Any
         raise HTTPException(status_code=400, detail="missing_task_id")
     if not url:
         raise HTTPException(status_code=400, detail="missing_url")
-    step = PlanStep(
+    step = _build_plan_step(
         goal="open_url",
         step_id="open_url_screenshot",
         tool="browser",
@@ -1118,12 +1329,12 @@ async def assistant_operator_step(request: Request) -> Dict[str, Any]:
     success_criteria = str(payload.get("success_criteria") or "").strip()
     if tool not in {"browser", "shell", "editor", "desktop"}:
         raise HTTPException(status_code=400, detail="invalid_tool")
-    step = PlanStep(
+    step = _build_plan_step(
         goal=goal,
         step_id=step_id,
-        tool=tool,  # type: ignore[arg-type]
+        tool=tool,
         action=action,
-        risk=risk,  # type: ignore[arg-type]
+        risk=risk,
         success_criteria=success_criteria,
     )
     result = await operator.execute_plan_step_async(task_id, step)
@@ -1180,7 +1391,7 @@ async def assistant_operator_gmail_draft_leave(request: Request) -> Dict[str, An
 
     actions = recipes.gmail_draft_actions(to=to, subject=subject, body=body)
 
-    step = PlanStep(
+    step = _build_plan_step(
         goal="gmail_draft_leave",
         step_id="gmail_compose_draft",
         tool="browser",
@@ -1452,6 +1663,16 @@ async def assistant_vscode_context_update(request: Request) -> Dict[str, Any]:
         raise HTTPException(status_code=400, detail="Invalid payload")
     entry = assistant_state.record_vscode_context(payload)
     return {"status": "ok", "entry": entry}
+
+
+@app.get("/diagnostics")
+async def diagnostics() -> Dict[str, Any]:
+    """Get system diagnostics: component load status, memory, health."""
+    return {
+        "status": "ok",
+        "components": server_bootstrap.get_all_components(),
+        "uptime_s": time.time(),
+    }
 
 
 @app.on_event("shutdown")

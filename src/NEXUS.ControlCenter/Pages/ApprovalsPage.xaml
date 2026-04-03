@@ -1,0 +1,82 @@
+<Page
+    x:Class="NEXUS.ControlCenter.Pages.ApprovalsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="{StaticResource NexusPagePadding}" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.1*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="NEXUS / APPROVALS" Style="{StaticResource NexusEyebrowTextStyle}" />
+                <TextBlock Text="Human-in-the-loop controls" FontSize="22" FontWeight="SemiBold" />
+                <TextBlock Text="Pending approvals stay actionable here, while the right pane preserves history so the shell remains accountable." Style="{StaticResource NexusBodyMutedTextStyle}" />
+                <muxc:InfoBar x:Name="StatusBar"
+                              IsOpen="True"
+                              Severity="Informational"
+                              Title="Approvals"
+                              Message="Loading approval state..." />
+
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button Content="Refresh" Click="RefreshButton_Click" />
+                    <Button Content="Approve" Click="ApproveButton_Click" />
+                    <Button Content="Reject" Click="RejectButton_Click" />
+                    <Button Content="Approve + Continue" Click="ContinueButton_Click" />
+                </StackPanel>
+
+                <ListView x:Name="PendingList" SelectionChanged="PendingList_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,8"
+                                    Padding="12"
+                                    Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding Detail}" TextWrapping="Wrap" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding Risk}" />
+                                    <TextBlock Text="{Binding TimestampLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="Approval history" FontSize="18" FontWeight="SemiBold" />
+                <TextBlock x:Name="SelectedApprovalText"
+                           Text="Select a pending approval to see more context."
+                           TextWrapping="Wrap"
+                           Style="{StaticResource NexusBodyMutedTextStyle}" />
+                <ListView x:Name="HistoryList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,8"
+                                    Padding="12"
+                                    Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding Status}" />
+                                    <TextBlock Text="{Binding Detail}" TextWrapping="Wrap" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding TimestampLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,2 @@
+{"ts": 1775148068.320835, "kind": "user_message", "role": "user", "content": "Say hello in five words.", "meta": {"model": "assistant", "attachments": []}}
+{"ts": 1775148068.3218403, "kind": "assistant_message", "role": "assistant", "content": "Hello from the digital world.", "meta": {"model": "assistant"}}

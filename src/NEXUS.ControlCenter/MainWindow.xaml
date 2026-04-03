@@ -1,0 +1,159 @@
+<Window
+    x:Class="NEXUS.ControlCenter.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    Title="NEXUS Mission Control">
+
+    <Grid Background="{ThemeResource NexusWindowBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Margin="16,16,16,0"
+                Padding="18,14"
+                Background="{ThemeResource NexusPanelBrush}"
+                BorderBrush="{ThemeResource NexusBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16">
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="16">
+                <StackPanel>
+                    <TextBlock Text="NEXUS / MISSION CONTROL"
+                               Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBlock Text="Native shell foundation"
+                               FontSize="24"
+                               FontWeight="SemiBold"
+                               Foreground="{ThemeResource NexusTextPrimaryBrush}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                    <TextBlock Text="Connection" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="ConnectionStateText" FontWeight="SemiBold" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" HorizontalAlignment="Right">
+                    <TextBlock Text="Profile" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="ProfileText" FontWeight="SemiBold" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" HorizontalAlignment="Right">
+                    <TextBlock Text="Backend" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="BackendText" FontWeight="SemiBold" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="16" ColumnDefinitions="*,320" ColumnSpacing="16">
+            <muxc:NavigationView x:Name="ShellNav"
+                                 IsBackButtonVisible="Collapsed"
+                                 IsPaneToggleButtonVisible="False"
+                                 PaneDisplayMode="LeftCompact"
+                                 AlwaysShowHeader="False"
+                                 Background="Transparent"
+                                 SelectionChanged="ShellNav_SelectionChanged">
+                <muxc:NavigationView.MenuItems>
+                    <muxc:NavigationViewItem Content="Overview" Tag="overview">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Home" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Chats" Tag="chats">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Message" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Operator" Tag="operator">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Play" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Approvals" Tag="approvals">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Accept" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Voice" Tag="voice">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Microphone" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Browser" Tag="browser">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Globe" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Desktop" Tag="desktop">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="AllApps" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Modules" Tag="modules">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Setting" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                    <muxc:NavigationViewItem Content="Settings" Tag="settings">
+                        <muxc:NavigationViewItem.Icon>
+                            <SymbolIcon Symbol="Admin" />
+                        </muxc:NavigationViewItem.Icon>
+                    </muxc:NavigationViewItem>
+                </muxc:NavigationView.MenuItems>
+                <ContentControl x:Name="MainContentHost" />
+            </muxc:NavigationView>
+
+            <Border Grid.Column="1"
+                    Background="{ThemeResource NexusPanelBrush}"
+                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="16"
+                    Padding="16">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Intel Panel"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               Foreground="{ThemeResource NexusTextPrimaryBrush}" />
+                    <TextBlock x:Name="IntelSummaryText"
+                               Text="Initializing shell state…"
+                               Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <ListView x:Name="IntelList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,0,0,8"
+                                        Padding="10"
+                                        Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                        BorderBrush="{ThemeResource NexusBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="12">
+                                    <TextBlock Text="{Binding}" TextWrapping="Wrap" />
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="2"
+                Margin="16,0,16,16"
+                Background="{ThemeResource NexusPanelBrush}"
+                BorderBrush="{ThemeResource NexusBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="16">
+            <muxc:CommandBar DefaultLabelPosition="Right" Background="Transparent">
+                <muxc:CommandBar.PrimaryCommands>
+                    <AppBarButton Icon="Refresh" Label="Refresh" Click="RefreshButton_Click" />
+                    <AppBarButton Icon="Microphone" Label="Voice" Click="VoiceButton_Click" />
+                    <AppBarElementContainer>
+                        <TextBox x:Name="CommandInputBox"
+                                 Width="420"
+                                 PlaceholderText="Type a chat message or command…" />
+                    </AppBarElementContainer>
+                    <AppBarButton Icon="Send" Label="Send" Click="SendButton_Click" />
+                </muxc:CommandBar.PrimaryCommands>
+            </muxc:CommandBar>
+        </Border>
+    </Grid>
+</Window>

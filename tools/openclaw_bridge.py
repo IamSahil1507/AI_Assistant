@@ -14,6 +14,19 @@ import requests
 from tools.auto_runner import execute_instructions, execute_action_payload
 from tools import assistant_state
 
+SENSITIVE_CONFIG_KEY_HINTS = (
+    "apikey",
+    "api_key",
+    "token",
+    "password",
+    "secret",
+    "bottoken",
+    "privatekey",
+    "accesskey",
+    "access_token",
+    "refresh_token",
+)
+
 DEFAULT_CONFIG: Dict[str, Any] = {
     "ollama_base_url": "http://localhost:11434",
     "ollama_api": "native",
@@ -283,9 +296,9 @@ class PolicyManager:
 
 
 class OpenClawBridge:
-    def __init__(self, config_path: Optional[Path] = None) -> None:
-        root = Path(__file__).resolve().parents[1]
-        app_config_path = config_path or (root / "config" / "openclaw.json")
+    def __init__(self, config_path: Optional[Path] = None, project_root: Optional[str | Path] = None) -> None:
+        root = Path(project_root).resolve() if project_root else Path(__file__).resolve().parents[1]
+        app_config_path = Path(config_path).resolve() if config_path else (root / "config" / "openclaw.json")
         user_config_path = self._default_user_config()
         self.config_manager = ConfigManager(app_config_path, user_config_path)
         self.policy = PolicyManager(self.config_manager)
@@ -427,6 +440,7 @@ class OpenClawBridge:
                 if self._is_blocked_model(model_id):
                     continue
                 size = item.get("size")
+                size_val = None
                 if max_size is not None:
                     try:
                         size_val = float(size)
@@ -440,6 +454,7 @@ class OpenClawBridge:
                     "model": model_id,
                     "description": "Discovered Ollama model",
                     "tags": ["ollama", "discovered"],
+                    "size_bytes": size_val,
                 }
 
         self._discovered_models = models
@@ -450,8 +465,37 @@ class OpenClawBridge:
         config_models = self.config_manager.config.get("models", {})
         combined: Dict[str, Dict[str, Any]] = {}
         if isinstance(config_models, dict):
+            providers = config_models.get("providers")
+            if isinstance(providers, dict):
+                for provider_name, provider_entry in providers.items():
+                    if not isinstance(provider_entry, dict):
+                        continue
+                    provider_base_url = str(provider_entry.get("baseUrl") or "").strip()
+                    provider_api = str(provider_entry.get("api") or self.config_manager.config.get("ollama_api") or "native").strip()
+                    provider_api_key = str(provider_entry.get("apiKey") or "").strip()
+                    provider_models = provider_entry.get("models")
+                    if not isinstance(provider_models, list):
+                        continue
+                    for model in provider_models:
+                        if not isinstance(model, dict):
+                            continue
+                        model_id = str(model.get("id") or "").strip()
+                        if not model_id:
+                            continue
+                        entry = dict(model)
+                        entry["provider"] = provider_name
+                        entry["model"] = str(model.get("model") or model_id)
+                        if provider_base_url:
+                            entry["baseUrl"] = provider_base_url
+                        if provider_api:
+                            entry["api"] = provider_api
+                        if provider_api_key:
+                            entry["apiKey"] = provider_api_key
+                        combined[model_id] = entry
             for key, value in config_models.items():
-                if isinstance(value, dict):
+                if key == "providers":
+                    continue
+                if isinstance(value, dict) and ("model" in value or "description" in value or "baseUrl" in value):
                     combined[key] = value
         for key, value in self._discovered_models.items():
             if key not in combined:
@@ -505,6 +549,9 @@ class OpenClawBridge:
         temperature: Optional[float],
         *,
         keep_alive: Optional[str] = None,
+        base_url: Optional[str] = None,
+        api_mode: Optional[str] = None,
+        api_key: Optional[str] = None,
     ) -> Dict[str, Any]:
         messages = []
         if system_prompt:
@@ -515,19 +562,23 @@ class OpenClawBridge:
             "messages": messages,
             "stream": False,
         }
-        api_mode = str(self.config_manager.config.get("ollama_api") or "native").lower()
-        if api_mode == "openai":
+        selected_api_mode = str(api_mode or self.config_manager.config.get("ollama_api") or "native").lower()
+        selected_base_url = str(base_url or self._ollama_base_url()).rstrip("/")
+        headers = {}
+        if api_key:
+            headers["Authorization"] = f"Bearer {api_key}"
+        if selected_api_mode == "openai":
             if temperature is not None:
                 payload["temperature"] = float(temperature)
-            url = f"{self._ollama_base_url()}/v1/chat/completions"
+            url = f"{selected_base_url}/v1/chat/completions"
         else:
             if temperature is not None:
                 payload["options"] = {"temperature": float(temperature)}
             if keep_alive is not None:
                 payload["keep_alive"] = keep_alive
-            url = f"{self._ollama_base_url()}/api/chat"
+            url = f"{selected_base_url}/api/chat"
         try:
-            response = self.session.post(url, json=payload, timeout=120)
+            response = self.session.post(url, json=payload, headers=headers, timeout=120)
             if response.status_code >= 400:
                 detail = response.text.strip()
                 return {"error": f"HTTP {response.status_code}: {detail}", "model_used": model_name}
@@ -537,7 +588,7 @@ class OpenClawBridge:
 
         content = ""
         if isinstance(data, dict):
-            if api_mode == "openai":
+            if selected_api_mode == "openai":
                 choices = data.get("choices") or []
                 if choices and isinstance(choices[0], dict):
                     message = choices[0].get("message") or {}
@@ -566,31 +617,75 @@ class OpenClawBridge:
     ) -> Dict[str, Any]:
         entry = self._get_model_entry(model_id)
         model_name = model_id
+        model_base_url: Optional[str] = None
+        model_api_mode: Optional[str] = None
+        model_api_key: Optional[str] = None
         if entry:
             model_name = str(entry.get("model") or model_id)
+            model_base_url = str(entry.get("baseUrl") or "").strip() or None
+            model_api_mode = str(entry.get("api") or "").strip() or None
+            model_api_key = str(entry.get("apiKey") or "").strip() or None
         else:
             models = self._combined_models()
             if model_id not in models:
                 default_model = str(self.config_manager.config.get("default_model") or "").strip()
                 if default_model and default_model in models:
                     model_name = default_model
-                elif models:
-                    model_name = next(iter(models.keys()))
+                    entry = self._get_model_entry(model_name)
+                    if entry:
+                        model_base_url = str(entry.get("baseUrl") or "").strip() or None
+                        model_api_mode = str(entry.get("api") or "").strip() or None
+                        model_api_key = str(entry.get("apiKey") or "").strip() or None
+                else:
+                    fallback = self._pick_fallback_model()
+                    if fallback:
+                        model_name = fallback
+                        entry = self._get_model_entry(model_name)
+                        if entry:
+                            model_base_url = str(entry.get("baseUrl") or "").strip() or None
+                            model_api_mode = str(entry.get("api") or "").strip() or None
+                            model_api_key = str(entry.get("apiKey") or "").strip() or None
 
         if not self._is_model_available(model_name):
             fallback = self._pick_fallback_model()
             if fallback:
                 model_name = fallback
+                entry = self._get_model_entry(model_name)
+                if entry:
+                    model_base_url = str(entry.get("baseUrl") or "").strip() or None
+                    model_api_mode = str(entry.get("api") or "").strip() or None
+                    model_api_key = str(entry.get("apiKey") or "").strip() or None
 
         assistant_state.add_model_event("select", model_name, source="bridge")
         self._unload_other_models(model_name)
-        return self._call_ollama_chat(model_name, prompt, system_prompt, temperature, keep_alive=keep_alive)
+        return self._call_ollama_chat(
+            model_name,
+            prompt,
+            system_prompt,
+            temperature,
+            keep_alive=keep_alive,
+            base_url=model_base_url,
+            api_mode=model_api_mode,
+            api_key=model_api_key,
+        )
 
     def _pick_fallback_model(self) -> str:
         default_model = str(self.config_manager.config.get("default_model") or "").strip()
         if default_model and default_model in self._discovered_models:
             return default_model
-        return next(iter(self._discovered_models.keys()), "")
+        if not self._discovered_models:
+            return ""
+
+        def sort_key(item: tuple[str, Dict[str, Any]]) -> tuple[float, str]:
+            model_id, entry = item
+            size = entry.get("size_bytes")
+            try:
+                size_val = float(size)
+            except (TypeError, ValueError):
+                size_val = float("inf")
+            return (size_val, model_id)
+
+        return min(self._discovered_models.items(), key=sort_key)[0]
 
     def _truncate_text(self, text: str, max_chars: int) -> str:
         if max_chars <= 0:
@@ -972,7 +1067,7 @@ class OpenClawBridge:
 
     def get_safe_config(self) -> Dict[str, Any]:
         config = self.config_manager.config
-        return {
+        safe_config = {
             "gateway_base_url": config.get("gateway_base_url"),
             "awarenet_ui_poll_interval_seconds": config.get("awarenet_ui_poll_interval_seconds"),
             "model_poll_interval_seconds": config.get("model_poll_interval_seconds"),
@@ -989,6 +1084,24 @@ class OpenClawBridge:
             "desktop": config.get("desktop", {}),
             "voice": config.get("voice", {}),
         }
+        return self._redact_sensitive_values(safe_config)
+
+    def _redact_sensitive_values(self, value: Any) -> Any:
+        if isinstance(value, dict):
+            redacted: Dict[str, Any] = {}
+            for key, item in value.items():
+                if self._is_sensitive_config_key(key):
+                    redacted[key] = "<redacted>" if item not in (None, "", [], {}) else item
+                else:
+                    redacted[key] = self._redact_sensitive_values(item)
+            return redacted
+        if isinstance(value, list):
+            return [self._redact_sensitive_values(item) for item in value]
+        return value
+
+    def _is_sensitive_config_key(self, key: str) -> bool:
+        normalized = re.sub(r"[^a-z0-9]", "", str(key).lower())
+        return any(hint in normalized for hint in SENSITIVE_CONFIG_KEY_HINTS)
 
     def list_models(self) -> list[str]:
         return list(self._combined_models().keys())

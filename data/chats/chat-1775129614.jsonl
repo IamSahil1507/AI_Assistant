@@ -1,0 +1,2 @@
+{"ts": 1775129734.5916522, "kind": "user_message", "role": "user", "content": "Say hello in five words.", "meta": {"model": "assistant", "attachments": []}}
+{"ts": 1775129734.595652, "kind": "assistant_message", "role": "assistant", "content": "HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)", "meta": {"model": "assistant"}}

@@ -1,0 +1,44 @@
+<Page
+    x:Class="NEXUS.ControlCenter.Pages.VoicePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="{StaticResource NexusPagePadding}">
+        <Border Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="16">
+                <TextBlock Text="NEXUS / VOICE" Style="{StaticResource NexusEyebrowTextStyle}" />
+                <TextBlock Text="Voice command and diagnostics" FontSize="22" FontWeight="SemiBold" />
+                <TextBlock Text="Test text-to-speech, run a direct voice command, or capture a single listen pass from the same mission shell." Style="{StaticResource NexusBodyMutedTextStyle}" />
+
+                <muxc:InfoBar x:Name="StatusBar"
+                              IsOpen="True"
+                              Severity="Informational"
+                              Title="Voice tools"
+                              Message="Voice actions are ready to test." />
+
+                <TextBox x:Name="SpeakTextBox" PlaceholderText="Text to speak..." />
+                <Button Content="Speak" HorizontalAlignment="Left" Click="SpeakButton_Click" />
+
+                <TextBox x:Name="CommandTextBox" PlaceholderText="Voice command text..." />
+                <Button Content="Run voice command" HorizontalAlignment="Left" Click="VoiceCommandButton_Click" />
+
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBox x:Name="ListenSecondsTextBox"
+                             Width="120"
+                             Text="5"
+                             Header="Listen seconds" />
+                    <Button Content="Listen once" VerticalAlignment="Bottom" Click="ListenOnceButton_Click" />
+                </StackPanel>
+
+                <TextBlock x:Name="ResultSummaryText" FontWeight="SemiBold" />
+                <TextBlock x:Name="ResultDetailText"
+                           TextWrapping="Wrap"
+                           Style="{StaticResource NexusBodyMutedTextStyle}" />
+                <TextBlock x:Name="ArtifactPathText"
+                           TextWrapping="Wrap"
+                           Style="{StaticResource NexusBodyMutedTextStyle}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

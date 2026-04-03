@@ -1,0 +1,99 @@
+<Page
+    x:Class="NEXUS.ControlCenter.Pages.OperatorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="{StaticResource NexusPagePadding}" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Spacing="16">
+            <Border Style="{StaticResource NexusCardBorderStyle}">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="NEXUS / OPERATOR" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBlock Text="Task orchestration" FontSize="22" FontWeight="SemiBold" />
+                    <TextBlock Text="Start a task, inspect the active run, and review its artifacts from the same shell." Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <muxc:InfoBar x:Name="ErrorBar"
+                                  IsOpen="False"
+                                  Severity="Error"
+                                  Title="Operator issue"
+                                  Message="-" />
+
+                    <TextBox x:Name="GoalTextBox"
+                             PlaceholderText="Describe the task you want the operator to run..." />
+
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Start task" Click="StartTaskButton_Click" />
+                        <Button Content="Refresh state" Click="RefreshButton_Click" />
+                    </StackPanel>
+
+                    <TextBlock x:Name="ActiveStatusText" FontWeight="SemiBold" />
+                    <TextBlock x:Name="ActiveGoalText" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="ActiveTaskIdText" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="ActiveArtifactsText" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="ActiveObservationText"
+                               TextWrapping="Wrap"
+                               Style="{StaticResource NexusBodyMutedTextStyle}" />
+                </StackPanel>
+            </Border>
+
+            <Border Style="{StaticResource NexusCardBorderStyle}">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="Recent operator history" FontSize="18" FontWeight="SemiBold" />
+                    <ListView x:Name="HistoryList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,0,0,8"
+                                        Padding="12"
+                                        Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                        BorderBrush="{ThemeResource NexusBorderBrush}"
+                                        BorderThickness="1"
+                                        CornerRadius="12">
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="{Binding Goal}" FontWeight="SemiBold" />
+                                        <TextBlock Text="{Binding Status}" />
+                                        <TextBlock Text="{Binding StartedLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                        <TextBlock Text="{Binding LastObservationSummary}"
+                                                   TextWrapping="Wrap"
+                                                   Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Column="1" Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="Artifacts" FontSize="18" FontWeight="SemiBold" />
+                <TextBlock Text="The active task’s artifact directory is surfaced here so troubleshooting stays close to the operator."
+                           TextWrapping="Wrap"
+                           Style="{StaticResource NexusBodyMutedTextStyle}" />
+                <ListView x:Name="ArtifactsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,8"
+                                    Padding="12"
+                                    Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding Path}" TextWrapping="Wrap" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding UpdatedLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding SizeLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,96 @@
+<Page
+    x:Class="NEXUS.ControlCenter.Pages.ShellSettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="{StaticResource NexusPagePadding}" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.1*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Style="{StaticResource NexusCardBorderStyle}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="NEXUS / SETTINGS" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBlock Text="Shell configuration" FontSize="22" FontWeight="SemiBold" />
+                    <TextBlock Text="This page controls how NEXUS opens, what surfaces stay active, and which backend it prefers." Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <muxc:InfoBar x:Name="StatusBar"
+                                  IsOpen="True"
+                                  Severity="Informational"
+                                  Title="Settings"
+                                  Message="Edit values and save when ready." />
+
+                    <TextBlock Text="Profile name" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBox x:Name="ProfileNameTextBox" />
+
+                    <TextBlock Text="Preferred backend URL" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBox x:Name="BackendUrlTextBox" PlaceholderText="Leave blank to auto-discover" />
+
+                    <CheckBox x:Name="EnableTrayCheckBox" Content="Enable tray surface" />
+                    <CheckBox x:Name="EnableOrbCheckBox" Content="Enable orb surface" />
+                    <CheckBox x:Name="EnableMissionControlCheckBox" Content="Enable mission control shell" />
+                    <CheckBox x:Name="EnablePopupsCheckBox" Content="Enable pop-ups" />
+                    <CheckBox x:Name="ToggleQuickPanelCheckBox" Content="Toggle quick panel when focused" />
+                    <CheckBox x:Name="MinimizeToTrayCheckBox" Content="Minimize to tray on repeated open" />
+
+                    <TextBlock Text="Glow strength" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBox x:Name="GlowStrengthTextBox" />
+
+                    <TextBlock Text="Transparency" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBox x:Name="TransparencyTextBox" />
+
+                    <TextBlock Text="Quick actions" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBox x:Name="QuickActionsTextBox"
+                             AcceptsReturn="True"
+                             TextWrapping="Wrap"
+                             MinHeight="120" />
+
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Save shell settings" Click="SaveButton_Click" />
+                        <Button Content="Reload backend config" Click="ReloadConfigButton_Click" />
+                        <Button Content="Create config snapshot" Click="SnapshotButton_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Border Grid.Column="1" Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="Backend config" FontSize="18" FontWeight="SemiBold" />
+                <TextBlock Text="Safe backend config and snapshots are visible here so the replacement shell can stay operationally transparent."
+                           TextWrapping="Wrap"
+                           Style="{StaticResource NexusBodyMutedTextStyle}" />
+
+                <TextBox x:Name="ConfigJsonTextBox"
+                         IsReadOnly="True"
+                         AcceptsReturn="True"
+                         TextWrapping="Wrap"
+                         MinHeight="260"
+                         VerticalScrollBarVisibility="Auto" />
+
+                <TextBlock Text="Snapshots" FontWeight="SemiBold" />
+
+                <ListView x:Name="SnapshotsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,8"
+                                    Padding="12"
+                                    Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Id}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding CreatedLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding Summary}" TextWrapping="Wrap" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

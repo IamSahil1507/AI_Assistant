@@ -27,6 +27,210 @@
             "maxTokens": 8192
           }
         ]
+      },
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "apiKey": "OLLAMA_API_KEY",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "kimi-k2.5:cloud",
+            "name": "kimi-k2.5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "minimax-m2.5:cloud",
+            "name": "minimax-m2.5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "glm-5:cloud",
+            "name": "glm-5:cloud",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "llama3.2-vision:latest",
+            "name": "llama3.2-vision:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "llama3.2:latest",
+            "name": "llama3.2:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gpt-oss:latest",
+            "name": "gpt-oss:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3-coder:latest",
+            "name": "qwen3-coder:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 8192
+          },
+          {
+            "id": "phi3:latest",
+            "name": "phi3:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-r1:latest",
+            "name": "deepseek-r1:latest",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "llama3.2:3b",
+            "name": "llama3.2:3b",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3-coder:30b",
+            "name": "qwen3-coder:30b",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gpt-oss:20b",
+            "name": "gpt-oss:20b",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 8192
+          }
+        ]
+      },
+      "google": {
+        "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "apiKey": "AIzaSyBB5pV6ILyzmxOY9SCXWV1aAw99nATc9qA",
+        "models": []
       }
     }
   },
@@ -92,7 +296,24 @@
     "allowlist": [],
     "denylist_enabled": true,
     "denylist": [],
-    "telemetry_disabled": true
+    "telemetry_disabled": true,
+    "entries": {
+      "goplaces": {
+        "apiKey": "AIzaSyBB5pV6ILyzmxOY9SCXWV1aAw99nATc9qA"
+      },
+      "notion": {
+        "apiKey": "AIzaSyBB5pV6ILyzmxOY9SCXWV1aAw99nATc9qA"
+      },
+      "openai-image-gen": {
+        "apiKey": "AIzaSyBB5pV6ILyzmxOY9SCXWV1aAw99nATc9qA"
+      },
+      "openai-whisper-api": {
+        "apiKey": "AIzaSyBB5pV6ILyzmxOY9SCXWV1aAw99nATc9qA"
+      },
+      "sag": {
+        "apiKey": "AIzaSyBB5pV6ILyzmxOY9SCXWV1aAw99nATc9qA"
+      }
+    }
   },
   "editor_bridge": {
     "host": "127.0.0.1",
@@ -113,13 +334,13 @@
     "tts_voice_name_contains": ""
   },
   "meta": {
-    "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-14T14:33:23.939Z"
+    "lastTouchedVersion": "2026.3.28",
+    "lastTouchedAt": "2026-03-30T04:01:29.910Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-05T17:21:15.879Z",
-    "lastRunVersion": "2026.3.2",
-    "lastRunCommand": "configure",
+    "lastRunAt": "2026-03-30T04:01:29.834Z",
+    "lastRunVersion": "2026.3.28",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "update": {
@@ -131,15 +352,20 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "ollama-proxy/awarenet:v1"
+        "primary": "ollama/llama3.2:3b"
       },
       "models": {
         "ollama-proxy/awarenet:v1": {
           "alias": "awarenet"
-        }
+        },
+        "ollama/kimi-k2.5:cloud": {},
+        "ollama/llama3.2:3b": {}
       },
-      "workspace": "C:\\AI_Assistant",
-      "maxConcurrent": 1
+      "workspace": "C:\\Users\\Sahil\\.ollama\\models",
+      "maxConcurrent": 1,
+      "imageGenerationModel": {
+        "primary": "google/gemini-3-pro-image-preview"
+      }
     },
     "list": [
       {
@@ -156,6 +382,13 @@
   "tools": {
     "agentToAgent": {
       "enabled": true
+    },
+    "profile": "coding",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "duckduckgo"
+      }
     }
   },
   "commands": {
@@ -171,15 +404,153 @@
       "dmPolicy": "pairing",
       "botToken": "8780329921:AAE4BLKVfI_izbflOTGx5j64-h_4RMYCO80",
       "groupPolicy": "open",
-      "streaming": "partial"
+      "streaming": "partial",
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      }
+    },
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "selfChatMode": true,
+      "allowFrom": [
+        "+919157410138"
+      ],
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "mediaMaxMb": 50
     }
   },
   "gateway": {
     "port": 18789,
     "mode": "local",
     "auth": {
-      "mode": "token",
-      "token": "ollama"
+      "mode": "password",
+      "token": "ollama",
+      "password": "150706"
+    },
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "funnel",
+      "resetOnExit": false
+    }
+  },
+  "auth": {
+    "profiles": {
+      "ollama:default": {
+        "provider": "ollama",
+        "mode": "api_key"
+      }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true,
+        "config": {}
+      },
+      "duckduckgo": {
+        "enabled": true,
+        "config": {}
+      }
+    }
+  },
+  "features": {
+    "operator": {
+      "enabled": true,
+      "mode": "auto_unless_risky",
+      "scope": "everything",
+      "limits": {
+        "max_steps": 12
+      }
+    },
+    "chats": {
+      "enabled": true,
+      "mode": "ask",
+      "scope": "everything",
+      "limits": {}
+    },
+    "approvals": {
+      "enabled": true,
+      "mode": "ask",
+      "scope": "everything",
+      "limits": {}
+    },
+    "browser": {
+      "enabled": true,
+      "mode": "auto_unless_risky",
+      "scope": "everything",
+      "limits": {}
+    },
+    "editor": {
+      "enabled": true,
+      "mode": "auto_unless_risky",
+      "scope": "workspace_only",
+      "limits": {}
+    },
+    "desktop": {
+      "enabled": true,
+      "mode": "ask",
+      "scope": "everything",
+      "limits": {}
+    },
+    "voice": {
+      "enabled": true,
+      "mode": "ask",
+      "scope": "everything",
+      "limits": {}
+    },
+    "research": {
+      "enabled": true,
+      "mode": "auto_unless_risky",
+      "scope": "everything",
+      "limits": {
+        "max_minutes": 5
+      }
+    },
+    "autofix": {
+      "enabled": true,
+      "mode": "ask",
+      "scope": "workspace_only",
+      "limits": {
+        "max_attempts": 2
+      }
+    },
+    "logs": {
+      "enabled": true,
+      "mode": "off",
+      "scope": "everything",
+      "limits": {}
+    },
+    "lessons": {
+      "enabled": true,
+      "mode": "off",
+      "scope": "everything",
+      "limits": {}
     }
   }
 }

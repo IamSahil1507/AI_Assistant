@@ -1,0 +1,21 @@
+{
+  "task_id": "task_1775117582_c3d47a",
+  "goal": "hello",
+  "state": "observing",
+  "steps": [
+    {
+      "id": "step_0",
+      "goal": "hello",
+      "tool": "bash",
+      "status": "pending",
+      "error": "unknown"
+    }
+  ],
+  "reflections": [
+    "\u274c Step step_0 failed: unknown",
+    "\ud83d\udd04 Retrying step step_0 (attempt 1)"
+  ],
+  "started_at": 1775117582.8974166,
+  "completed_at": 1775117983.1322925,
+  "error_count": 1
+}

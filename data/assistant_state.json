@@ -1,7 +1,21 @@
 {
-  "preferences": {},
+  "preferences": {
+    "verification": "active"
+  },
   "tasks": {
-    "queue": [],
+    "queue": [
+      {
+        "id": "task_1775129551_b9218a",
+        "description": "verification smoke task",
+        "priority": "low",
+        "status": "pending",
+        "created_at": "2026-04-02T11:32:31.190631+00:00",
+        "updated_at": "2026-04-02T11:32:31.190631+00:00",
+        "metadata": {
+          "source": "codex-test"
+        }
+      }
+    ],
     "history": []
   },
   "action_log": [],
@@ -10,7 +24,58 @@
     "history": []
   },
   "operator": {
-    "active": null,
+    "active": {
+      "task_id": "op_1775187508_2c37eeac",
+      "goal": "test operator",
+      "artifacts_dir": "D:\\Projects\\AI_Assistant\\.superpowers\\operator\\op_1775187508_2c37eeac",
+      "status": "active",
+      "started_at": "2026-04-03T03:38:28.230507+00:00",
+      "last_step": {
+        "goal": "list workspace",
+        "step_id": "list_root",
+        "tool": "shell",
+        "risk": "normal",
+        "success_criteria": "directory listed",
+        "action": {
+          "type": "fs_list",
+          "path": "D:/Projects/AI_Assistant",
+          "max_entries": 3
+        }
+      },
+      "last_observation": {
+        "tool": "shell",
+        "ts": 1775187508.2495086,
+        "ok": true,
+        "summary": "Listed directory",
+        "data": {
+          "ok": true,
+          "path": "D:\\Projects\\AI_Assistant",
+          "entries": [
+            {
+              "name": ".continue",
+              "path": "D:\\Projects\\AI_Assistant\\.continue",
+              "type": "dir",
+              "size": null
+            },
+            {
+              "name": ".git",
+              "path": "D:\\Projects\\AI_Assistant\\.git",
+              "type": "dir",
+              "size": null
+            },
+            {
+              "name": ".gitignore",
+              "path": "D:\\Projects\\AI_Assistant\\.gitignore",
+              "type": "file",
+              "size": 516
+            }
+          ],
+          "truncated": true
+        },
+        "artifact_paths": [],
+        "fingerprint": "cc86b0ec42dc13c84ba7582c4f9dea5dfaeaff1db1ac213e15e164eeaf548129"
+      }
+    },
     "history": []
   },
   "model_events": [
@@ -77,6 +142,126 @@
       "source": "bridge",
       "detail": "",
       "ts": "2026-03-19T15:41:43.993202+00:00"
+    },
+    {
+      "id": "0af21065376741a9a27975c93addaa82",
+      "event": "select",
+      "model": "qwen3.5:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T11:32:37.161966+00:00"
+    },
+    {
+      "id": "ea38d37e4f6749f99fd4b23364fdef5b",
+      "event": "select",
+      "model": "qwen3.5:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T11:33:34.541706+00:00"
+    },
+    {
+      "id": "ffe998ed807b4edc8c655122c8c9a13c",
+      "event": "select",
+      "model": "qwen3.5:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:31:10.898780+00:00"
+    },
+    {
+      "id": "8cd12237d7e8498392a12a57dbc4fead",
+      "event": "select",
+      "model": "phi3:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:33:29.329987+00:00"
+    },
+    {
+      "id": "00cebac21b33464d8fbcdd71e7a85508",
+      "event": "unload",
+      "model": "qwen3.5:latest",
+      "source": "ollama",
+      "detail": "",
+      "ts": "2026-04-02T16:33:29.354905+00:00"
+    },
+    {
+      "id": "d9dcc4a8a7af495cb2d31a7f62f78526",
+      "event": "select",
+      "model": "qwen3.5:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:33:33.598900+00:00"
+    },
+    {
+      "id": "b3531d26aca54c30825b7b3f8f4972bf",
+      "event": "unload",
+      "model": "phi3:latest",
+      "source": "ollama",
+      "detail": "",
+      "ts": "2026-04-02T16:33:33.616552+00:00"
+    },
+    {
+      "id": "6996a6f725e24d6c8eb5a2111699884e",
+      "event": "select",
+      "model": "llama3.2:3b",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:35:35.801330+00:00"
+    },
+    {
+      "id": "fab36cdb79854e91b52c83ee8daa152c",
+      "event": "select",
+      "model": "deepseek-r1:latest",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:35:39.855881+00:00"
+    },
+    {
+      "id": "e29c42cd3c104f218061b332332565c7",
+      "event": "unload",
+      "model": "llama3.2:3b",
+      "source": "ollama",
+      "detail": "",
+      "ts": "2026-04-02T16:35:39.872267+00:00"
+    },
+    {
+      "id": "753c351fda9645af9b32d550a6d1dab4",
+      "event": "select",
+      "model": "llama3.2:3b",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:40:12.088541+00:00"
+    },
+    {
+      "id": "cd80eb3b45c3478a96865dd090b24432",
+      "event": "select",
+      "model": "llama3.2:3b",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:40:12.539335+00:00"
+    },
+    {
+      "id": "f902341cb6a947fbaeb1a838d8d15900",
+      "event": "select",
+      "model": "llama3.2:3b",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:40:16.083982+00:00"
+    },
+    {
+      "id": "bb5dda03225846de9e6f6a3bcda74c35",
+      "event": "select",
+      "model": "llama3.2:3b",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:41:07.648553+00:00"
+    },
+    {
+      "id": "09458d179b674164847902b5f66cc656",
+      "event": "select",
+      "model": "llama3.2:3b",
+      "source": "bridge",
+      "detail": "",
+      "ts": "2026-04-02T16:41:08.337842+00:00"
     }
   ],
   "system_events": [
@@ -151,6 +336,94 @@
       "source": "skills",
       "detail": "[WinError 2] The system cannot find the file specified",
       "ts": "2026-03-20T04:54:13.721241+00:00"
+    },
+    {
+      "id": "525fe79d45044df9aaf24dd595321d88",
+      "level": "info",
+      "message": "Operator task started: verification operator task",
+      "source": "operator",
+      "detail": "op_1775129551_4aff1d20",
+      "ts": "2026-04-02T11:32:31.215159+00:00"
+    },
+    {
+      "id": "83875e8344974bf5a9b5c38ff1d325cc",
+      "level": "info",
+      "message": "Operator task started: list open windows",
+      "source": "operator",
+      "detail": "op_1775129555_d6c595f8",
+      "ts": "2026-04-02T11:32:35.106605+00:00"
+    },
+    {
+      "id": "4884bb53adf544bebe4d152922775773",
+      "level": "info",
+      "message": "Operator task started: direct smoke browser",
+      "source": "operator",
+      "detail": "op_1775129756_eba5eb36",
+      "ts": "2026-04-02T11:35:56.399010+00:00"
+    },
+    {
+      "id": "31a61d31e39a485480b4cf3c77cd46b2",
+      "level": "info",
+      "message": "Operator task started: async shell smoke",
+      "source": "operator",
+      "detail": "op_1775129787_057998b1",
+      "ts": "2026-04-02T11:36:27.177123+00:00"
+    },
+    {
+      "id": "814c406fe949457bb8b33bc580bff360",
+      "level": "info",
+      "message": "Operator task started: async desktop smoke",
+      "source": "operator",
+      "detail": "op_1775129787_e08a9cee",
+      "ts": "2026-04-02T11:36:27.431913+00:00"
+    },
+    {
+      "id": "ff4132f46a2b40dc9e180e906547b9fd",
+      "level": "info",
+      "message": "Operator task started: verification operator task 2",
+      "source": "operator",
+      "detail": "op_1775147459_c8cdb89f",
+      "ts": "2026-04-02T16:31:00.020669+00:00"
+    },
+    {
+      "id": "2d3b68cfc36a4f9c88c580afd33aed1e",
+      "level": "info",
+      "message": "Operator task started: final smoke operator",
+      "source": "operator",
+      "detail": "op_1775148048_449b2169",
+      "ts": "2026-04-02T16:40:48.936930+00:00"
+    },
+    {
+      "id": "cc10d9ea4e364c6bad10652d253aacc6",
+      "level": "info",
+      "message": "Operator task started: test operator",
+      "source": "operator",
+      "detail": "op_1775187189_74152415",
+      "ts": "2026-04-03T03:33:09.923446+00:00"
+    },
+    {
+      "id": "c7e2936082374a2d9ced3f98f336cf10",
+      "level": "info",
+      "message": "Operator task started: test operator",
+      "source": "operator",
+      "detail": "op_1775187294_9d11a874",
+      "ts": "2026-04-03T03:34:54.207630+00:00"
+    },
+    {
+      "id": "677b2d584922433382e087c9ccef3257",
+      "level": "info",
+      "message": "Operator task started: test operator",
+      "source": "operator",
+      "detail": "op_1775187345_34e7a5f5",
+      "ts": "2026-04-03T03:35:45.306936+00:00"
+    },
+    {
+      "id": "a20464e7ac5544398b13b8c9ea713579",
+      "level": "info",
+      "message": "Operator task started: test operator",
+      "source": "operator",
+      "detail": "op_1775187508_2c37eeac",
+      "ts": "2026-04-03T03:38:28.245505+00:00"
     }
   ],
   "gateway_cache": {},
@@ -158,10 +431,18 @@
     "last": null,
     "history": []
   },
-  "notes": [],
+  "notes": [
+    {
+      "id": "15b1a4ae34b74e4eaf2bfef07413a65c",
+      "note": "verification smoke test",
+      "source": "api",
+      "ts": "2026-04-02T11:32:31.179632+00:00"
+    }
+  ],
   "status": {
     "last_heartbeat": "2026-03-20T05:37:16.009459+00:00",
-    "proactive_status": "running"
+    "proactive_status": "running",
+    "operator.last_observation_fp": "4bc01008cabd60d5743edfe51316c9800f2090e320545039b6fac44af92cdfe8"
   },
-  "updated_at": "2026-03-20T05:37:16.009459+00:00"
+  "updated_at": "2026-04-03T03:38:28.265513+00:00"
 }

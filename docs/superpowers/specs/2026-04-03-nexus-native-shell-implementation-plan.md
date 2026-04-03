@@ -10,7 +10,7 @@ This plan treats the current NEXUS spec as having two kinds of requirements:
 - `P0 parity + cutover`
   - features already present in the Awarenet codebase that must survive the migration to NEXUS
 - `P1/P2 expansion`
-  - new ideas added to the NEXUS spec that are valuable, but should not block replacement of the old UI
+  - new ideas added to the NEXUS spec that are valuable, but should block replacement of the old UI
 
 This keeps the project buildable and prevents the cutover target from becoming unbounded.
 
@@ -231,14 +231,13 @@ The work is split into six streams that can move in parallel where safe:
   - voice command entry
   - operator invocation from chat
 - `Operator`
-  - start task
+  - start cron jobs and scheduled tasks
+  - view active state and history of scheduled tasks
   - active state
   - step/history view
   - artifacts access
 - `Approvals`
-  - pending queue
-  - history
-  - approve / reject / approve-and-continue
+  - histories of approvals with details and timestamps
 - `Settings`
   - startup
   - surfaces
@@ -246,6 +245,7 @@ The work is split into six streams that can move in parallel where safe:
   - backend
   - theme
   - popup behavior
+  - ui
 - `Modules`
   - availability
   - reasons
@@ -315,7 +315,7 @@ The work is split into six streams that can move in parallel where safe:
   - quick file action
 - `Desktop`
   - windows list
-  - launch app
+  - launched app with details and timestamps
   - screenshot
 - `Lessons`
   - lessons list and detail

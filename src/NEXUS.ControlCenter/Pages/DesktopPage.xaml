@@ -1,0 +1,72 @@
+<Page
+    x:Class="NEXUS.ControlCenter.Pages.DesktopPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="{StaticResource NexusPagePadding}" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.1*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Spacing="16">
+            <Border Style="{StaticResource NexusCardBorderStyle}">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="NEXUS / DESKTOP" Style="{StaticResource NexusEyebrowTextStyle}" />
+                    <TextBlock Text="Windows automation bridge" FontSize="22" FontWeight="SemiBold" />
+                    <TextBlock Text="Launch apps, capture screenshots, and inspect live windows from the replacement shell." Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <muxc:InfoBar x:Name="StatusBar"
+                                  IsOpen="True"
+                                  Severity="Informational"
+                                  Title="Desktop runtime"
+                                  Message="Loading desktop state..." />
+
+                    <TextBox x:Name="LaunchCommandTextBox" PlaceholderText="App command, for example notepad.exe" />
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Launch app" Click="LaunchButton_Click" />
+                        <Button Content="Refresh windows" Click="RefreshButton_Click" />
+                    </StackPanel>
+
+                    <TextBox x:Name="WindowTitleTextBox" PlaceholderText="Window title contains..." />
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <Button Content="Full screenshot" Click="FullScreenshotButton_Click" />
+                        <Button Content="Window screenshot" Click="WindowScreenshotButton_Click" />
+                    </StackPanel>
+
+                    <TextBlock x:Name="ResultSummaryText" FontWeight="SemiBold" />
+                    <TextBlock x:Name="ResultDetailText"
+                               TextWrapping="Wrap"
+                               Style="{StaticResource NexusBodyMutedTextStyle}" />
+                    <TextBlock x:Name="ArtifactPathText"
+                               TextWrapping="Wrap"
+                               Style="{StaticResource NexusBodyMutedTextStyle}" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Column="1" Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="Visible windows" FontSize="18" FontWeight="SemiBold" />
+                <ListView x:Name="WindowsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,8"
+                                    Padding="12"
+                                    Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding ClassName}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding HandleLabel}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

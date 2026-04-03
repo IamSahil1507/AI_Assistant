@@ -1,0 +1,66 @@
+<Page
+    x:Class="NEXUS.ControlCenter.Pages.ModulesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <Grid Padding="{StaticResource NexusPagePadding}" ColumnSpacing="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="NEXUS / MODULES" Style="{StaticResource NexusEyebrowTextStyle}" />
+                <TextBlock Text="Feature and capability matrix" FontSize="22" FontWeight="SemiBold" />
+                <TextBlock Text="Availability comes from capabilities, while behavior comes from feature settings. This gives the new shell one place to inspect and tune the runtime." Style="{StaticResource NexusBodyMutedTextStyle}" />
+                <muxc:InfoBar x:Name="StatusBar"
+                              IsOpen="True"
+                              Severity="Informational"
+                              Title="Modules"
+                              Message="Loading feature state..." />
+
+                <Button Content="Refresh modules" HorizontalAlignment="Left" Click="RefreshButton_Click" />
+
+                <ListView x:Name="ModulesList" SelectionChanged="ModulesList_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,8"
+                                    Padding="12"
+                                    Background="{ThemeResource NexusSurfaceRaisedBrush}"
+                                    BorderBrush="{ThemeResource NexusBorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding Mode}" />
+                                    <TextBlock Text="{Binding Scope}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                    <TextBlock Text="{Binding AvailabilityReason}" Style="{StaticResource NexusBodyMutedTextStyle}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Style="{StaticResource NexusCardBorderStyle}">
+            <StackPanel Spacing="12">
+                <TextBlock Text="Selected module" FontSize="18" FontWeight="SemiBold" />
+                <TextBlock x:Name="SelectionTitleText"
+                           Text="Pick a module to edit."
+                           FontWeight="SemiBold" />
+                <TextBlock x:Name="AvailabilityText"
+                           TextWrapping="Wrap"
+                           Style="{StaticResource NexusBodyMutedTextStyle}" />
+
+                <CheckBox x:Name="EnabledCheckBox" Content="Enabled" />
+                <TextBox x:Name="ModeTextBox" Header="Mode" />
+                <TextBox x:Name="ScopeTextBox" Header="Scope" />
+
+                <Button Content="Save module settings" HorizontalAlignment="Left" Click="SaveButton_Click" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

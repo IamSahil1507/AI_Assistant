@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>NEXUS.ControlCenter</RootNamespace>
+    <AssemblyName>NEXUS.ControlCenter</AssemblyName>
+    <UseWinUI>true</UseWinUI>
+    <EnableMsixTooling>false</EnableMsixTooling>
+    <WindowsPackageType>None</WindowsPackageType>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootsLog>$(BaseIntermediateOutputPath)NEXUS.ControlCenter.roots.log</RootsLog>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+    <Page Include="MainWindow.xaml" />
+    <Page Include="Pages\ApprovalsPage.xaml" />
+    <Page Include="Pages\BrowserPage.xaml" />
+    <Page Include="Pages\ChatsPage.xaml" />
+    <Page Include="Pages\DesktopPage.xaml" />
+    <Page Include="Pages\FeaturePlaceholderPage.xaml" />
+    <Page Include="Pages\ModulesPage.xaml" />
+    <Page Include="Pages\OperatorPage.xaml" />
+    <Page Include="Pages\OverviewPage.xaml" />
+    <Page Include="Pages\VoicePage.xaml" />
+    <Page Include="Styles\ThemeResources.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\ShellSettingsPage.xaml.cs" />
+  </ItemGroup>
+</Project>

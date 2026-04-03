@@ -112,20 +112,33 @@ The following inventory is derived from the existing Awarenet codebase and shoul
 - `Tasks`
   - queue and history
   - quick-create with priority
+  - cron jobs and scheduled tasks
 - `Memory`
   - preferences
   - notes
   - VS Code context snapshot
+  - enything that are instructed to be remembered by the user
+  - behavioral context like "you are a helpful assistant that speaks like Shakespeare"
+  - injected context from tools and plugins
+  - recent task and operator history
+  - contextual information like time, date, and system status
+  - anything else that can be stored and recalled to improve assistant performance and continuity
+  - about anything that can be used to help the assistant understand the user's needs, preferences, and situation better
+  - practically anything that can be represented as data and used to inform the assistant's responses and actions
+  - anything that can be remembered and used to create a more personalized and effective assistant experience
+  - anything that can be stored and recalled to enhance the assistant's ability to assist the user in a more relevant and context-aware way
+  - anything that can be remembered and used to create a more engaging and useful assistant experience
+  - preferances about how the assistant should behave and respond in different situations
+  - learned information from past interactions that can be used to improve future responses
+  - injected context from tools and plugins that can enhance the assistant's understanding of the current situation
+  - recent task and operator history that can provide continuity and relevance to the assistant's responses
 - `Policy`
   - autonomy
   - safety lock
   - allow-scope editing
 - `Approvals`
-  - pending queue
-  - approve
-  - reject
-  - approve-and-continue
-  - history
+  - approved and  rejected approvals with date and time history
+  - pending approvals with details and timestamps
 - `Operator`
   - active task state
   - operator history
@@ -133,9 +146,32 @@ The following inventory is derived from the existing Awarenet codebase and shoul
   - lessons tail
   - recent tool/error visibility
 - `Voice`
-  - speak
-  - listen once
-  - result inspection
+  - input device selection
+  - voice mode selection
+  - recent voice events
+  - speak and listen testing
+  - voice command invocation
+  - voice command history
+  - voice command settings
+  - voice command logs
+  - voice command diagnostics
+  - voice command performance metrics
+  - voice command error handling
+  - voice command quality evaluation
+  - voice command improvement suggestions
+  - voice command safety checks
+  - voice command user feedback
+  - voice command user preferences
+  - voice command user behavior analysis
+  - voice command user engagement tracking
+  - voice command user satisfaction measurement
+  - voice command user retention analysis
+  - voice command user experience optimization
+  - voice sound settings
+  - voice input sensitivity
+  - voice output settings
+  - different voices for the assistant
+  - voice command customization options
 - `Logs`
   - action logs
   - system logs
@@ -143,10 +179,15 @@ The following inventory is derived from the existing Awarenet codebase and shoul
   - log file listing
   - log tail viewing
 - `Config`
+  - backend config viewing and editing
+  - runtime config viewing and editing
   - core config editing
+  - backend config viewing and editing
   - UI config editing
+  - config diff viewing
   - snapshot creation
   - snapshot restore
+  - snapshot listing
 - `Endpoints Explorer`
   - arbitrary request testing
   - method selection
@@ -157,32 +198,61 @@ The following inventory is derived from the existing Awarenet codebase and shoul
   - installed list
   - approvals
   - history
+  - skill details and management
+  - skill execution
+  - skill performance metrics
+  - skill sources
+  - skill dependencies
+  - skill versioning
+  - skill user feedback
+  - skill improvement suggestions
 - `Gateway proxy`
-  - mirrored OpenClaw sections through backend proxy
+  - mirrored OpenClaw sections through backend proxy in dedicated UI section
+  - gateway diagnostics and state visibility
+  - direct proxy testing for gateway tools and endpoints
+  - anything else related to the gateway and its interaction with the assistant backend
+  - anything else that can help users understand and manage the gateway's role in the assistant's operation
+  - anything else that can provide visibility into the gateway's behavior and performance
+  - anything else that can help users troubleshoot and optimize the gateway's interaction with the assistant backend
+  - anything else that can enhance the user's ability to work with the gateway and its role in the assistant's operation
+  - anything else that can provide insights and control over the gateway's behavior
+  - anything else that can help users get the most out of the gateway's capabilities and its
+  - how many requests are being proxied
+  - what the latency of proxied requests is
 - `Awarenet UI preferences`
   - poll interval
   - summary-first vs raw-first
-  - sidebar density / compact mode
+  - sidebar density / compact mode / dropdowns
+  - show raw JSON and logs/ card-based summary view
+  - migration shortcuts for former Awarenet sections
+  - any other user preferences related to the UI and how information is presented
+  - any other user preferences related to the UI and how information is presented that can enhance the user's experience and make it more personalized
+  `ai assistant networks`
+  - how many networks are connected releted to the assistant, ollama, and openclaw
+  - status of each network
+  - any other information related to the assistant's network connections that can help users understand and manage the assistant's connectivity and performance
+  - any other information related to the assistant's network connections that can help users troubleshoot and optimize the assistant's connectivity and performance
 
 ### From the native Awarenet WinUI shell
 
 - `Chats`
   - connection state
-  - chat list
+  - chat list in sidebar with timestamps, snippets, and title releted to the assistant's chat interactions and history (exactly like chatgpt)
   - history loading
   - streaming responses
-  - attachments
-  - voice command in chat
+  - attachments in chat (including files and whole folders)
+  - voice command in chat (while voice input enables chat input, it should also trigger the same command processing as if the text were typed into the chat input box, including operator invocation when relevant, and sci-fi jarvis like ui appearance when voice input is active)
   - `/op` operator invocation from chat
+  - approves and rejects from chat
 - `Operator`
   - goal-driven task start
   - active summary
   - artifacts list
   - history
 - `Approvals`
-  - native approval actions
+  - history with details and timestamps
 - `Voice`
-  - native speak/listen view
+  - configuration and testing
 - `Browser Sessions`
   - open URL through operator
   - load artifacts by task id
@@ -279,18 +349,42 @@ Configurable options:
 
 These actions must be accessible from tray and orb quick surfaces, with visibility controlled in settings:
 
-- `Voice Command`
-- `Statistics`
-- `Report`
-- `Shortcuts`
-- `Configurations`
 - `Open`
+  - full-screen mission control
+  - if already open, jump to mission control and flash orb
+  - if already open and focused, flash orb and show quick panel
+  - minimizes to tray if already open and focused and user clicks `Open` again (configurable behavior)
+- `Voice Command`
+  enable/disable voice command wake method
+- `Statistics`
+  - opens compact live metrics panel or jumps to Mission Control stats view
+- `Report`
+  - opens latest summary or diagnostic report with one-click expand to full screen
+- `Shortcuts`
+  - opens user-defined quick commands, workflows, and launchers
+  - keyboard shortcuts for quick actions and workflows
+  - customizable quick actions that can be added to the tray and orb surfaces for fast access to frequently used commands and workflows
+- `Configurations`
+  - opens the settings experience directly to let users adjust their preferences and configurations without needing to navigate through multiple screens
+  - customizable quick actions that can be added to the tray and orb surfaces for fast access to frequently used commands and workflows, including direct links to specific settings pages for quick adjustments
 - `Pop-ups`
+  - toggles popup mode or opens popup settings
+  - quick toggle for pop-up notifications, allowing users to enable or disable them on the fly based on their current needs and preferences
+  - direct access to popup settings for users who want to customize their notification experience without having to navigate through the full settings menu
+  - voice intraction pop-up
+  - statatics pop-up
+  - report pop-up
+  - shortcut pop-up
+  - partially configured pop-up
+  - any other quick action that can be toggled or accessed directly from the tray or orb surfaces to enhance user convenience and control over their assistant experience
 - `Exit`
+  - shuts down NEXUS cleanly
 
 ### Meaning of `Open`
 
 `Open` always launches or focuses full-screen `Mission Control`.
+if full-screen is already open and focused, `Open` toggles the quick panel on the orb instead.
+If `Open` is triggered again while full-screen is open and focused, it minimizes to tray (configurable behavior).
 
 ### Quick action behavior
 
@@ -306,7 +400,8 @@ These actions must be accessible from tray and orb quick surfaces, with visibili
 - `Configurations`
   - opens the settings experience directly
 - `Pop-ups`
-  - toggles popup mode or opens popup settings
+  - toggles popup mode or opens popups + settings
+  - quick toggle for pop-up notifications, allowing users to enable or disable them on the fly
 - `Exit`
   - shuts down NEXUS cleanly
   - optional safeguard can convert exit into minimize-to-tray
@@ -420,7 +515,7 @@ Mission Control is the full-screen NEXUS interface.
   - emergency stop
 - `Left Tactical Rail`
   - Overview
-  - Command
+  - chats
   - Operator
   - Approvals
   - Voice
@@ -462,7 +557,7 @@ Mission Control is the full-screen NEXUS interface.
   - fast actions
   - gateway diagnostics
   - policy and memory summary
-- `Command`
+- `chats`
   - conversational interaction
   - text and voice entry
   - streaming response
@@ -479,7 +574,7 @@ Mission Control is the full-screen NEXUS interface.
 - `Approvals`
   - pending queue
   - history
-  - approve, reject, and approve-and-continue actions
+  - approve, reject, and approve-and-continue history with details and timestamps
 - `Voice`
   - microphone state
   - wake settings
@@ -494,7 +589,7 @@ Mission Control is the full-screen NEXUS interface.
   - quick file actions
 - `Desktop`
   - windows list
-  - app launch
+  - app launches history with details and timestamps
   - screenshots
 - `Reports`
   - daily summaries
